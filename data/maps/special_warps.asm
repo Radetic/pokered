@@ -45,7 +45,8 @@ special_warp_spec: MACRO
 ENDM
 
 FirstMapSpec:
-	special_warp_spec REDS_HOUSE_2F, 3, 6, REDS_HOUSE_2
+	; special_warp_spec REDS_HOUSE_2F, 3, 6, REDS_HOUSE_2
+	special_warp_spec OAKS_LAB, 5, 5, DOJO
 TradeCenterSpec1:
 	special_warp_spec TRADE_CENTER,  3, 4, CLUB
 TradeCenterSpec2:                   

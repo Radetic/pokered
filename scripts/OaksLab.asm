@@ -31,6 +31,28 @@ OaksLab_ScriptPointers:
 	dw OaksLabScript18
 
 OaksLabScript0:
+	ld a, HS_OAKS_LAB_OAK_1
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+
+	ld hl, wd72e
+	res 4, [hl] ; enables battles
+	
+	SetEvent EVENT_FOLLOWED_OAK_INTO_LAB
+	SetEvent EVENT_FOLLOWED_OAK_INTO_LAB_2 ; unify these events
+
+	ld hl, wFlags_D733
+	res 1, [hl] ; return music control to normal
+	call PlayDefaultMusic
+
+	SetEvent EVENT_OAK_ASKED_TO_CHOOSE_MON
+	xor a
+	ld [wJoyIgnore], a
+
+	ld a, $6
+	ld [wOaksLabCurScript], a
+	ret
+; OaksLabScript0: ; originally
 	CheckEvent EVENT_OAK_APPEARED_IN_PALLET
 	ret z
 	ld a, [wNPCMovementScriptFunctionNum]
@@ -40,7 +62,7 @@ OaksLabScript0:
 	ld [wMissableObjectIndex], a
 	predef ShowObject
 	ld hl, wd72e
-	res 4, [hl]
+	res 4, [hl] ; enables battles
 
 	ld a, $1
 	ld [wOaksLabCurScript], a
@@ -109,7 +131,7 @@ OaksLabScript4:
 	and a
 	ret nz
 	SetEvent EVENT_FOLLOWED_OAK_INTO_LAB
-	SetEvent EVENT_FOLLOWED_OAK_INTO_LAB_2
+	SetEvent EVENT_FOLLOWED_OAK_INTO_LAB_2 ; unify these events
 	ld a, $1
 	ldh [hSpriteIndex], a
 	ld a, SPRITE_FACING_UP
@@ -117,7 +139,7 @@ OaksLabScript4:
 	call SetSpriteFacingDirectionAndDelay
 	call UpdateSprites
 	ld hl, wFlags_D733
-	res 1, [hl]
+	res 1, [hl] ; return music control to normal
 	call PlayDefaultMusic
 
 	ld a, $5
