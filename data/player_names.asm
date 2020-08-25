@@ -8,7 +8,7 @@ DefaultNamesPlayer:
 
 DefaultNamesRival:
 	db   "NEW NAME"
-	next "BLUE"
+	next "GREEN"
 	next "SHIGERU"
 	next "JOHN"
 	db   "@"
