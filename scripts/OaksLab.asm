@@ -38,8 +38,9 @@ OaksLabScript0:
 	ld hl, wd72e
 	res 4, [hl] ; enables battles
 	
+	; unify these events
 	SetEvent EVENT_FOLLOWED_OAK_INTO_LAB
-	SetEvent EVENT_FOLLOWED_OAK_INTO_LAB_2 ; unify these events
+	SetEvent EVENT_FOLLOWED_OAK_INTO_LAB_2
 
 	ld hl, wFlags_D733
 	res 1, [hl] ; return music control to normal
@@ -353,7 +354,7 @@ OaksLabScript9:
 	ld a, $e
 	ldh [hSpriteIndexOrTextID], a
 	call DisplayTextID
-	SetEvent EVENT_GOT_STARTER
+	SetEvent EVENT_GOT_STARTER ; rival gets a starter pkmn
 	xor a
 	ld [wJoyIgnore], a
 
@@ -362,6 +363,21 @@ OaksLabScript9:
 	ret
 
 OaksLabScript10:
+	CheckEvent EVENT_GOT_POKEDEX
+	jr nz, .got_pokedex
+	ld a, $10
+	ld [wOaksLabCurScript], a
+	ret
+.got_pokedex
+	xor a
+	ld [wJoyIgnore], a
+	CheckEvent EVENT_GOT_POKEBALLS_FROM_OAK
+	jr nz, .got_pokeballs
+	SetEvent EVENT_GOT_POKEBALLS_FROM_OAK
+	lb bc, POKE_BALL, 5
+	call GiveItem
+.got_pokeballs
+; OaksLabScript10: ; trigger rival battle
 	ld a, [wYCoord]
 	cp $6
 	ret nz
@@ -436,7 +452,7 @@ OaksLabScript11:
 	ld [wOaksLabCurScript], a
 	ret
 
-OaksLabScript12:
+OaksLabScript12: ; rival battle over
 	ld a, $f0
 	ld [wJoyIgnore], a
 	ld a, PLAYER_DIR_UP
@@ -457,7 +473,7 @@ OaksLabScript12:
 	ld [wOaksLabCurScript], a
 	ret
 
-OaksLabScript13:
+OaksLabScript13: ; rival goes away
 	ld c, 20
 	call DelayFrames
 	ld a, $10
@@ -528,7 +544,7 @@ OaksLabScript14:
 .done
 	ret
 
-OaksLabScript15:
+OaksLabScript15: ; called after removing OAKS_PARCEL from the bag
 	xor a
 	ldh [hJoyHeld], a
 	call EnableAutoTextBoxDrawing
@@ -539,7 +555,7 @@ OaksLabScript15:
 	ld a, $15
 	ldh [hSpriteIndexOrTextID], a
 	call DisplayTextID
-	call OaksLabScript_1d02b
+	call OaksLabScript_1d02b ; set NPC movement for RIVAL
 	ld a, HS_OAKS_LAB_RIVAL
 	ld [wMissableObjectIndex], a
 	predef ShowObject
@@ -574,8 +590,18 @@ OaksLabScript_1cefd:
 
 OaksLabScript16:
 	ld a, [wd730]
-	bit 0, a
+	bit 0, a ; is any NPC movement going on?
 	ret nz
+	CheckEvent EVENT_GOT_POKEDEX
+	jr z, .no_pokedex
+	ld a, $11
+	ld [wOaksLabCurScript], a
+	ret
+.no_pokedex
+; OaksLabScript16:
+	; ld a, [wd730]
+	; bit 0, a ; is any NPC movement going on?
+	; ret nz
 	call EnableAutoTextBoxDrawing
 	call PlayDefaultMusic
 	ld a, $fc
@@ -618,6 +644,7 @@ OaksLabScript16:
 	ld a, $1b
 	ldh [hSpriteIndexOrTextID], a
 	call DisplayTextID
+	; unify these events
 	SetEvent EVENT_GOT_POKEDEX
 	SetEvent EVENT_OAK_GOT_PARCEL
 	ld a, HS_LYING_OLD_MAN
@@ -626,23 +653,23 @@ OaksLabScript16:
 	ld a, HS_OLD_MAN
 	ld [wMissableObjectIndex], a
 	predef ShowObject
-	ld a, [wSavedNPCMovementDirections2Index]
-	ld b, 0
-	ld c, a
-	ld hl, wNPCMovementDirections2
-	xor a ; NPC_MOVEMENT_DOWN
-	call FillMemory
-	ld [hl], $ff
-	ld a, SFX_STOP_ALL_MUSIC
-	ld [wNewSoundID], a
-	call PlaySound
-	farcall Music_RivalAlternateStart
-	ld a, $1
-	ldh [hSpriteIndex], a
-	ld de, wNPCMovementDirections2
-	call MoveSprite
+	; ld a, [wSavedNPCMovementDirections2Index]
+	; ld b, 0
+	; ld c, a
+	; ld hl, wNPCMovementDirections2
+	; xor a ; NPC_MOVEMENT_DOWN
+	; call FillMemory
+	; ld [hl], $ff
+	; ld a, SFX_STOP_ALL_MUSIC
+	; ld [wNewSoundID], a
+	; call PlaySound
+	; farcall Music_RivalAlternateStart
+	; ld a, $1
+	; ldh [hSpriteIndex], a
+	; ld de, wNPCMovementDirections2
+	; call MoveSprite
 
-	ld a, $11
+	ld a, $a
 	ld [wOaksLabCurScript], a
 	ret
 
@@ -950,7 +977,7 @@ OaksLabMonChoiceMenu:
 	ld [wd11e], a
 	call AddPartyMon
 	ld hl, wd72e
-	set 3, [hl]
+	set 3, [hl] ; indicates the player received pkmn from Oak
 	ld a, $fc
 	ld [wJoyIgnore], a
 	ld a, $8
@@ -1013,7 +1040,7 @@ OaksLabText5:
 	CheckEventReuseA EVENT_BATTLED_RIVAL_IN_OAKS_LAB
 	jr nz, .asm_1d2a9
 	ld a, [wd72e]
-	bit 3, a
+	bit 3, a ; has the player received its 1st pkmn?
 	jr nz, .asm_1d2a1
 	ld hl, OaksLabText_1d2f0
 	call PrintText

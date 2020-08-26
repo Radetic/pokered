@@ -42,12 +42,16 @@ OakSpeech:
 	call LoadTextBoxTilePatterns
 	call SetDefaultNames
 	predef InitPlayerData2
-	ld hl, wNumBoxItems
+	
+	; ld hl, wNumBoxItems
+	ld hl, wNumBagItems
 	ld a, POTION
+	; ld a, OAKS_PARCEL ; who needs potions?
 	ld [wcf91], a
 	ld a, 1
 	ld [wItemQuantity], a
 	call AddItemToInventory  ; give one potion
+	
 	ld a, [wDefaultMap]
 	ld [wDestinationMap], a
 	call SpecialWarpIn
@@ -64,7 +68,7 @@ OakSpeech:
 	call PrintText
 	call GBFadeOutToWhite
 	call ClearScreen
-	ld a, NIDORINO
+	ld a, NIDORINO ; pokemon intro example
 	ld [wd0b5], a
 	ld [wcf91], a
 	call GetMonHeader
@@ -73,6 +77,7 @@ OakSpeech:
 	call MovePicLeft
 	ld hl, OakSpeechText2
 	call PrintText
+	
 	call GBFadeOutToWhite
 	call ClearScreen
 	ld de, RedPicFront
@@ -82,6 +87,7 @@ OakSpeech:
 	ld hl, IntroducePlayerText
 	call PrintText
 	call ChoosePlayerName
+	
 	call GBFadeOutToWhite
 	call ClearScreen
 	ld de, Rival1Pic
@@ -91,6 +97,7 @@ OakSpeech:
 	ld hl, IntroduceRivalText
 	call PrintText
 	call ChooseRivalName
+	
 .skipChoosingNames
 	call GBFadeOutToWhite
 	call ClearScreen

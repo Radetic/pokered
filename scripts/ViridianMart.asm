@@ -20,9 +20,10 @@ ViridianMartScript_1d47d:
 	ret
 
 ViridianMart_ScriptPointers:
+	dw ViridianMartScript2 ; moved to allow for OAKS_PARCEL bypass
 	dw ViridianMartScript0
 	dw ViridianMartScript1
-	dw ViridianMartScript2
+	; dw ViridianMartScript2
 
 ViridianMartScript0:
 	call UpdateSprites
