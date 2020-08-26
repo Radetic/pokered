@@ -15,6 +15,7 @@ ViridianCityScript0:
 	jp ViridianCityScript_1903d
 
 ViridianCityScript_1900b:
+	SetEvent EVENT_VIRIDIAN_GYM_OPEN ; relocted to allow entering the gym at any time
 	CheckEvent EVENT_VIRIDIAN_GYM_OPEN
 	ret nz
 	ld a, [wObtainedBadges]
