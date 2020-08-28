@@ -376,6 +376,9 @@ OaksLabScript10:
 	SetEvent EVENT_GOT_POKEBALLS_FROM_OAK
 	lb bc, POKE_BALL, 5
 	call GiveItem
+	; this doesn't work here for some reason
+	; ld hl, OaksLabGivePokeballsText
+	; call PrintText
 .got_pokeballs
 ; OaksLabScript10: ; trigger rival battle
 	ld a, [wYCoord]
@@ -542,6 +545,10 @@ OaksLabScript14:
 	xor a ; ld a, SPRITE_FACING_DOWN
 	ld [wSpritePlayerStateData1FacingDirection], a
 .done
+	; inserted for insurance
+	ld a, $11
+	ld [wOaksLabCurScript], a
+	; end of insertion
 	ret
 
 OaksLabScript15: ; called after removing OAKS_PARCEL from the bag
