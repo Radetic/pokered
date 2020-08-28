@@ -17,7 +17,7 @@ PewterCityScript0:
 	xor a
 	ld [wMuseum1FCurScript], a
 	ResetEvent EVENT_BOUGHT_MUSEUM_TICKET
-	call PewterCityScript_1925e
+	; call PewterCityScript_1925e ; triggers kid who drags you to Brock
 	ret
 
 PewterCityScript_1925e:
