@@ -7,4 +7,5 @@ UsableItems_CloseMenu:
 	db GOOD_ROD
 	db SUPER_ROD
 	db SURFBOARD
+	db SCYTHE
 	db -1 ; end

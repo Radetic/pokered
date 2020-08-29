@@ -23,7 +23,7 @@ ItemUsePtrTable:
 	dw ItemUseBall       ; POKE_BALL
 	dw ItemUseTownMap    ; TOWN_MAP
 	dw ItemUseBicycle    ; BICYCLE
-	dw ItemUseSurfboard  ; out-of-battle Surf effect
+	dw ItemUseSurfboard  ; SURFBOARD out-of-battle Surf effect
 	dw ItemUseBall       ; SAFARI_BALL
 	dw ItemUsePokedex    ; POKEDEX
 	dw ItemUseEvoStone   ; MOON_STONE
@@ -60,7 +60,7 @@ ItemUsePtrTable:
 	dw UnusableItem      ; DOME_FOSSIL
 	dw UnusableItem      ; HELIX_FOSSIL
 	dw UnusableItem      ; SECRET_KEY
-	dw UnusableItem
+	dw ItemUseScythe     ; SCYTHE
 	dw UnusableItem      ; BIKE_VOUCHER
 	dw ItemUseXAccuracy  ; X_ACCURACY
 	dw ItemUseEvoStone   ; LEAF_STONE
@@ -752,6 +752,12 @@ SurfingGotOnText:
 SurfingNoPlaceToGetOffText:
 	text_far _SurfingNoPlaceToGetOffText
 	text_end
+
+ItemUseScythe:
+	predef UsedCut
+	; ld a, [wActionResultOrTookBattleTurn]
+	; and a
+	ret
 
 ItemUsePokedex:
 	predef_jump ShowPokedexMenu
