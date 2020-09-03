@@ -13,6 +13,9 @@ CinnabarIsland_ScriptPointers:
 	dw CinnabarIslandScript1
 
 CinnabarIslandScript0:
+	ld b, SURFBOARD
+	call IsItemInBag
+	ret nz
 	ld b, SECRET_KEY
 	call IsItemInBag
 	ret nz
