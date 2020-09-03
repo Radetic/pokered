@@ -66,6 +66,9 @@ OakSpeech:
 	ld [wItemQuantity], a
 	call AddItemToInventory  ; give SCYTHE
 	
+	ld hl, wd728
+	set 6, [hl] ; Safron guards won't bother
+	
 	ld a, [wDefaultMap]
 	ld [wDestinationMap], a
 	call SpecialWarpIn
