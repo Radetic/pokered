@@ -66,6 +66,13 @@ OakSpeech:
 	ld [wItemQuantity], a
 	call AddItemToInventory  ; give SCYTHE
 	
+	ld hl, wNumBagItems
+	ld a, FLASHLIGHT
+	ld [wcf91], a
+	ld a, 1
+	ld [wItemQuantity], a
+	call AddItemToInventory  ; give FLASHLIGHT
+	
 	ld hl, wd728
 	set 6, [hl] ; Safron guards won't bother
 	

@@ -66,7 +66,7 @@ ItemUsePtrTable:
 	dw ItemUseEvoStone   ; LEAF_STONE
 	dw ItemUseCardKey    ; CARD_KEY
 	dw UnusableItem      ; NUGGET
-	dw UnusableItem      ; ??? PP_UP
+	dw ItemUseFlashlight ; FLASHLIGHT
 	dw ItemUsePokedoll   ; POKE_DOLL
 	dw ItemUseMedicine   ; FULL_HEAL
 	dw ItemUseMedicine   ; REVIVE
@@ -754,10 +754,26 @@ SurfingNoPlaceToGetOffText:
 	text_end
 
 ItemUseScythe:
+; .scytheloop
 	predef UsedCut
 	; ld a, [wActionResultOrTookBattleTurn]
 	; and a
+	; jp z, .scytheloop
+	jp CloseTextDisplay
 	ret
+
+ItemUseFlashlight:
+	xor a
+	ld [wMapPalOffset], a
+	ld hl, .flashLightsAreaText
+	call PrintText
+	call GBPalWhiteOutWithDelay3
+	call RestoreScreenTilesAndReloadTilePatterns
+	jp CloseTextDisplay
+	ret
+.flashLightsAreaText
+	text_far _FlashLightsAreaText
+	text_end
 
 ItemUsePokedex:
 	predef_jump ShowPokedexMenu
