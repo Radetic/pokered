@@ -92,7 +92,13 @@ OakSpeech:
 	call PrintText
 	call GBFadeOutToWhite
 	call ClearScreen
-	ld a, NIDORINO ; pokemon intro example
+IF DEF(_GREEN)
+	ld a, RHYDON ; pokemon intro example
+ELIF DEF(_RED)
+	ld a, ARCANINE ; pokemon intro example
+ELIF DEF(_BLUE)
+	ld a, HAUNTER ; pokemon intro example
+ENDC
 	ld [wd0b5], a
 	ld [wcf91], a
 	call GetMonHeader
@@ -104,8 +110,8 @@ OakSpeech:
 	
 	call GBFadeOutToWhite
 	call ClearScreen
-	ld de, RedPicFront
-	lb bc, BANK(RedPicFront), $00
+	ld de, JrTrainerMPic
+	lb bc, BANK(JrTrainerMPic), $00
 	call IntroDisplayPicCenteredOrUpperRight
 	call MovePicLeft
 	ld hl, IntroducePlayerText
@@ -114,8 +120,8 @@ OakSpeech:
 	
 	call GBFadeOutToWhite
 	call ClearScreen
-	ld de, Rival1Pic
-	lb bc, BANK(Rival1Pic), $00
+	ld de, LassPic
+	lb bc, BANK(LassPic), $00
 	call IntroDisplayPicCenteredOrUpperRight
 	call FadeInIntroPic
 	ld hl, IntroduceRivalText
@@ -125,8 +131,8 @@ OakSpeech:
 .skipChoosingNames
 	call GBFadeOutToWhite
 	call ClearScreen
-	ld de, RedPicFront
-	lb bc, BANK(RedPicFront), $00
+	ld de, JrTrainerMPic
+	lb bc, BANK(JrTrainerMPic), $00
 	call IntroDisplayPicCenteredOrUpperRight
 	call GBFadeInFromWhite
 	ld a, [wd72d]

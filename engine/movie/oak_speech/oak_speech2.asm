@@ -20,8 +20,8 @@ ChoosePlayerName:
 	jr z, .customName
 	call ClearScreen
 	call Delay3
-	ld de, RedPicFront
-	ld b, BANK(RedPicFront)
+	ld de, JrTrainerMPic
+	ld b, BANK(JrTrainerMPic)
 	call IntroDisplayPicCenteredOrUpperRight
 .done
 	ld hl, YourNameIsText
@@ -53,7 +53,7 @@ ChooseRivalName:
 	jr z, .customName
 	call ClearScreen
 	call Delay3
-	ld de, Rival1Pic
+	ld de, LassPic
 	ld b, $13
 	call IntroDisplayPicCenteredOrUpperRight
 .done
