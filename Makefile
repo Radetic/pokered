@@ -1,4 +1,4 @@
-roms := pokered.gbc pokeblue.gbc pokeblue_debug.gbc
+roms := pokered.gbc pokegreen.gbc pokeblue.gbc pokeblue_debug.gbc
 
 rom_obj := \
 audio.o \
@@ -12,6 +12,7 @@ gfx/sprites.o \
 gfx/tilesets.o
 
 pokered_obj        := $(rom_obj:.o=_red.o)
+pokegreen_obj      := $(rom_obj:.o=_green.o)
 pokeblue_obj       := $(rom_obj:.o=_blue.o)
 pokeblue_debug_obj := $(rom_obj:.o=_blue_debug.o)
 
@@ -37,10 +38,11 @@ RGBLINK ?= $(RGBDS)rgblink
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
-.PHONY: all red blue blue_debug clean tidy compare tools
+.PHONY: all red green blue blue_debug clean tidy compare tools
 
 all: $(roms)
 red:        pokered.gbc
+green:      pokegreen.gbc
 blue:       pokeblue.gbc
 blue_debug: pokeblue_debug.gbc
 
@@ -48,7 +50,7 @@ clean: tidy
 	find gfx \( -iname '*.1bpp' -o -iname '*.2bpp' -o -iname '*.pic' \) -delete
 
 tidy:
-	rm -f $(roms) $(pokered_obj) $(pokeblue_obj) $(pokeblue_debug_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym) rgbdscheck.o
+	rm -f $(roms) $(pokered_obj) $(pokegreen_obj) $(pokeblue_obj) $(pokeblue_debug_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym) rgbdscheck.o
 	$(MAKE) clean -C tools/
 
 compare: $(roms)
@@ -65,6 +67,7 @@ RGBASMFLAGS += -E
 endif
 
 $(pokered_obj):        RGBASMFLAGS += -D _RED
+$(pokegreen_obj):      RGBASMFLAGS += -D _GREEN -D _RED
 $(pokeblue_obj):       RGBASMFLAGS += -D _BLUE
 $(pokeblue_debug_obj): RGBASMFLAGS += -D _BLUE -D _DEBUG
 
@@ -87,6 +90,7 @@ $(info $(shell $(MAKE) -C tools))
 
 # Dependencies for objects (drop _red and _blue from asm file basenames)
 $(foreach obj, $(pokered_obj), $(eval $(call DEP,$(obj),$(obj:_red.o=.asm))))
+$(foreach obj, $(pokegreen_obj), $(eval $(call DEP,$(obj),$(obj:_green.o=.asm))))
 $(foreach obj, $(pokeblue_obj), $(eval $(call DEP,$(obj),$(obj:_blue.o=.asm))))
 $(foreach obj, $(pokeblue_debug_obj), $(eval $(call DEP,$(obj),$(obj:_blue_debug.o=.asm))))
 
@@ -97,10 +101,12 @@ endif
 
 
 pokered_pad        = 0x00
+pokegreen_pad      = 0x00
 pokeblue_pad       = 0x00
 pokeblue_debug_pad = 0xff
 
 pokered_opt        = -jsv -n 0 -k 01 -l 0x33 -m 0x13 -r 03 -t "POKEMON RED"
+pokegreen_opt      = -jsv -n 0 -k 01 -l 0x33 -m 0x13 -r 03 -t "POKEMON GREEN"
 pokeblue_opt       = -jsv -n 0 -k 01 -l 0x33 -m 0x13 -r 03 -t "POKEMON BLUE"
 pokeblue_debug_opt = -jsv -n 0 -k 01 -l 0x33 -m 0x13 -r 03 -t "POKEMON BLUE"
 

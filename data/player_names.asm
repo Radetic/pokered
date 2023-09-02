@@ -1,31 +1,46 @@
-IF DEF(_RED)
+IF DEF(_GREEN)
+DefaultNamesPlayer:
+	db   "NEW NAME"
+	next "GREEN"
+	next "SHIGERU"
+	next "RADETIC"
+	db   "@"
+
+DefaultNamesRival:
+	db   "NEW NAME"
+	next "BLUE"
+	next "SHOUKO"
+	next "GLAUCIA"
+	db   "@"
+
+ELIF DEF(_RED)
 DefaultNamesPlayer:
 	db   "NEW NAME"
 	next "RED"
 	next "SATOSHI"
-	next "JACK"
+	next "LINKIN"
 	db   "@"
 
 DefaultNamesRival:
 	db   "NEW NAME"
 	next "GREEN"
 	next "SHIGERU"
-	next "JOHN"
+	next "DANIEL"
 	db   "@"
-ENDC
 
-IF DEF(_BLUE)
+ELIF DEF(_BLUE)
 DefaultNamesPlayer:
 	db   "NEW NAME"
 	next "BLUE"
-	next "GARY"
-	next "JOHN"
+	next "SHOUKO"
+	next "GLAUCIA"
 	db   "@"
 
 DefaultNamesRival:
 	db   "NEW NAME"
 	next "RED"
-	next "ASH"
-	next "JACK"
+	next "SATOSHI"
+	next "LINKIN"
 	db   "@"
+
 ENDC
