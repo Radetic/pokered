@@ -483,9 +483,9 @@ BlackbeltData:
 	db 43, MACHOKE, MACHOP, MACHOKE, 0
 
 Green1Data:
-	db 5, SQUIRTLE, 0
-	db 5, BULBASAUR, 0
-	db 5, CHARMANDER, 0
+	db 5, STARTER2, 0
+	db 5, STARTER3, 0
+	db 5, STARTER1, 0
 ; Route 22
 	db $FF, 9, PIDGEY, 8, SQUIRTLE, 0
 	db $FF, 9, PIDGEY, 8, BULBASAUR, 0
