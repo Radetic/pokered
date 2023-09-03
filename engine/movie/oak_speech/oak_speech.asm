@@ -92,12 +92,14 @@ OakSpeech:
 	call PrintText
 	call GBFadeOutToWhite
 	call ClearScreen
-IF DEF(_GREEN)
+IF DEF(_RADZ)
 	ld a, RHYDON ; pokemon intro example
-ELIF DEF(_RED)
+ELIF DEF(_LNKN)
 	ld a, ARCANINE ; pokemon intro example
-ELIF DEF(_BLUE)
+ELIF DEF(_GLAU)
 	ld a, HAUNTER ; pokemon intro example
+ELSE
+	ld a, NIDORINO ; pokemon intro example
 ENDC
 	ld [wd0b5], a
 	ld [wcf91], a

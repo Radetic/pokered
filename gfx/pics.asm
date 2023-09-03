@@ -331,15 +331,19 @@ TrainerPics::
 YoungsterPic::     INCBIN "gfx/trainers/youngster.pic"
 BugCatcherPic::    INCBIN "gfx/trainers/bugcatcher.pic"
 
-IF DEF(_GREEN)
+IF DEF(_RADZ)
 LassPic::          INCBIN "gfx/trainers/rival1.pic"
+ELIF DEF(_GLAU)
+LassPic::          INCBIN "gfx/trainers/red.pic"
 ELSE
 LassPic::          INCBIN "gfx/trainers/lass.pic"
 ENDC
 
 SailorPic::        INCBIN "gfx/trainers/sailor.pic"
 
-IF DEF(_RED)
+IF DEF(_RADZ)
+JrTrainerMPic::    INCBIN "gfx/trainers/red.pic"
+ELIF DEF(_LNKN)
 JrTrainerMPic::    INCBIN "gfx/trainers/rival1.pic"
 ELSE
 JrTrainerMPic::    INCBIN "gfx/trainers/jr.trainerm.pic"
@@ -347,7 +351,7 @@ ENDC
 
 JrTrainerFPic::    INCBIN "gfx/trainers/jr.trainerf.pic"
 
-IF DEF(_RED)
+IF DEF(_LNKN)
 PokemaniacPic::    INCBIN "gfx/trainers/rival2.pic"
 ELSE
 PokemaniacPic::    INCBIN "gfx/trainers/pokemaniac.pic"
@@ -355,7 +359,7 @@ ENDC
 
 SuperNerdPic::     INCBIN "gfx/trainers/supernerd.pic"
 
-IF DEF(_RED) || DEF(_BLUE)
+IF DEF(_LNKN) || DEF(_GLAU)
 HikerPic::         INCBIN "gfx/trainers/rival3.pic"
 ELSE
 HikerPic::         INCBIN "gfx/trainers/hiker.pic"
@@ -367,7 +371,7 @@ EngineerPic::      INCBIN "gfx/trainers/engineer.pic"
 FisherPic::        INCBIN "gfx/trainers/fisher.pic"
 SwimmerPic::       INCBIN "gfx/trainers/swimmer.pic"
 
-IF DEF(_BLUE)
+IF DEF(_GLAU)
 CueBallPic::       INCBIN "gfx/trainers/rival2.pic"
 ELSE
 CueBallPic::       INCBIN "gfx/trainers/cueball.pic"
@@ -381,19 +385,21 @@ JugglerPic::       INCBIN "gfx/trainers/juggler.pic"
 TamerPic::         INCBIN "gfx/trainers/tamer.pic"
 BirdKeeperPic::    INCBIN "gfx/trainers/birdkeeper.pic"
 
-IF DEF(_BLUE)
+IF DEF(_GLAU)
 BlackbeltPic::     INCBIN "gfx/trainers/rival1.pic"
+ELIF DEF(_LNKN)
+BlackbeltPic::     INCBIN "gfx/trainers/red.pic"
 ELSE
 BlackbeltPic::     INCBIN "gfx/trainers/blackbelt.pic"
 ENDC
 
-IF DEF(_GREEN)
+IF DEF(_RADZ)
 Rival1Pic::        INCBIN "gfx/trainers/lass.pic"
 
-ELIF DEF(_RED)
+ELIF DEF(_LNKN)
 Rival1Pic::        INCBIN "gfx/trainers/jr.trainerm.pic"
 
-ELIF DEF(_BLUE)
+ELIF DEF(_GLAU)
 Rival1Pic::        INCBIN "gfx/trainers/blackbelt.pic"
 
 ELSE
@@ -413,7 +419,7 @@ BrockPic::         INCBIN "gfx/trainers/brock.pic"
 MistyPic::         INCBIN "gfx/trainers/misty.pic"
 LtSurgePic::       INCBIN "gfx/trainers/lt.surge.pic"
 
-IF DEF(_GREEN)
+IF DEF(_RADZ)
 ErikaPic::         INCBIN "gfx/trainers/rival2.pic"
 ELSE
 ErikaPic::         INCBIN "gfx/trainers/erika.pic"
@@ -424,15 +430,15 @@ BlainePic::        INCBIN "gfx/trainers/blaine.pic"
 SabrinaPic::       INCBIN "gfx/trainers/sabrina.pic"
 GentlemanPic::     INCBIN "gfx/trainers/gentleman.pic"
 
-IF DEF(_GREEN)
+IF DEF(_RADZ)
 Rival2Pic::        INCBIN "gfx/trainers/erika.pic"
 Rival3Pic::        INCBIN "gfx/trainers/channeler.pic"
 
-ELIF DEF(_RED)
+ELIF DEF(_LNKN)
 Rival2Pic::        INCBIN "gfx/trainers/pokemaniac.pic"
 Rival3Pic::        INCBIN "gfx/trainers/hiker.pic"
 
-ELIF DEF(_BLUE)
+ELIF DEF(_GLAU)
 Rival2Pic::        INCBIN "gfx/trainers/cueball.pic"
 Rival3Pic::        INCBIN "gfx/trainers/hiker.pic"
 
@@ -444,7 +450,7 @@ ENDC
 
 LoreleiPic::       INCBIN "gfx/trainers/lorelei.pic"
 
-IF DEF(_GREEN)
+IF DEF(_RADZ)
 ChannelerPic::     INCBIN "gfx/trainers/rival3.pic"
 ELSE
 ChannelerPic::     INCBIN "gfx/trainers/channeler.pic"

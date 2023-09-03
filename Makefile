@@ -66,9 +66,9 @@ ifeq ($(DEBUG),1)
 RGBASMFLAGS += -E
 endif
 
-$(pokered_obj):        RGBASMFLAGS += -D _RED
-$(pokegreen_obj):      RGBASMFLAGS += -D _GREEN -D _RED
-$(pokeblue_obj):       RGBASMFLAGS += -D _BLUE
+$(pokered_obj):        RGBASMFLAGS += -D _RED -D _LNKN
+$(pokegreen_obj):      RGBASMFLAGS += -D _GREEN -D _RED -D _RADZ
+$(pokeblue_obj):       RGBASMFLAGS += -D _BLUE -D _GLAU
 $(pokeblue_debug_obj): RGBASMFLAGS += -D _BLUE -D _DEBUG
 
 rgbdscheck.o: rgbdscheck.asm

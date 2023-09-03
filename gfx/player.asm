@@ -1,10 +1,10 @@
-IF DEF(_GREEN)
+IF DEF(_RADZ)
 RedPicFront:: INCBIN "gfx/trainers/jr.trainerm.pic"
 
-ELIF DEF(_RED)
+ELIF DEF(_LNKN)
 RedPicFront:: INCBIN "gfx/trainers/blackbelt.pic"
 
-ELIF DEF(_BLUE)
+ELIF DEF(_GLAU)
 RedPicFront:: INCBIN "gfx/trainers/lass.pic"
 
 ELSE
