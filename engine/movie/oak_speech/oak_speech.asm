@@ -110,8 +110,8 @@ ENDC
 	
 	call GBFadeOutToWhite
 	call ClearScreen
-	ld de, JrTrainerMPic
-	lb bc, BANK(JrTrainerMPic), $00
+	ld de, RedPicFront
+	lb bc, BANK(RedPicFront), $00
 	call IntroDisplayPicCenteredOrUpperRight
 	call MovePicLeft
 	ld hl, IntroducePlayerText
@@ -120,8 +120,8 @@ ENDC
 	
 	call GBFadeOutToWhite
 	call ClearScreen
-	ld de, LassPic
-	lb bc, BANK(LassPic), $00
+	ld de, Rival1Pic
+	lb bc, BANK(Rival1Pic), $00
 	call IntroDisplayPicCenteredOrUpperRight
 	call FadeInIntroPic
 	ld hl, IntroduceRivalText
@@ -131,8 +131,8 @@ ENDC
 .skipChoosingNames
 	call GBFadeOutToWhite
 	call ClearScreen
-	ld de, JrTrainerMPic
-	lb bc, BANK(JrTrainerMPic), $00
+	ld de, RedPicFront
+	lb bc, BANK(RedPicFront), $00
 	call IntroDisplayPicCenteredOrUpperRight
 	call GBFadeInFromWhite
 	ld a, [wd72d]
