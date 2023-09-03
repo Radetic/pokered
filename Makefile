@@ -105,9 +105,9 @@ pokegreen_pad      = 0x00
 pokeblue_pad       = 0x00
 pokeblue_debug_pad = 0xff
 
-pokered_opt        = -jsv -n 0 -k 01 -l 0x33 -m 0x13 -r 03 -t "POKEMON RED"
-pokegreen_opt      = -jsv -n 0 -k 01 -l 0x33 -m 0x13 -r 03 -t "POKEMON GREEN"
-pokeblue_opt       = -jsv -n 0 -k 01 -l 0x33 -m 0x13 -r 03 -t "POKEMON BLUE"
+pokered_opt        = -jsv -n 0 -k 01 -l 0x33 -m 0x13 -r 03 -t "POKEMON LINK"
+pokegreen_opt      = -jsv -n 0 -k 01 -l 0x33 -m 0x13 -r 03 -t "POKEMON RADZ"
+pokeblue_opt       = -jsv -n 0 -k 01 -l 0x33 -m 0x13 -r 03 -t "POKEMON GLAU"
 pokeblue_debug_opt = -jsv -n 0 -k 01 -l 0x33 -m 0x13 -r 03 -t "POKEMON BLUE"
 
 %.gbc: $$(%_obj) layout.link
