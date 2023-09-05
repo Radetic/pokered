@@ -8,4 +8,5 @@ UsableItems_CloseMenu:
 	db SUPER_ROD
 	db SURFBOARD
 	db SCYTHE
+	db FLASHLIGHT
 	db -1 ; end

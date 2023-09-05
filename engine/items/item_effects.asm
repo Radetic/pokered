@@ -66,7 +66,7 @@ ItemUsePtrTable:
 	dw ItemUseEvoStone   ; LEAF_STONE
 	dw ItemUseCardKey    ; CARD_KEY
 	dw UnusableItem      ; NUGGET
-	dw UnusableItem      ; ??? PP_UP
+	dw ItemUseFlashlight ; FLASHLIGHT
 	dw ItemUsePokedoll   ; POKE_DOLL
 	dw ItemUseMedicine   ; FULL_HEAL
 	dw ItemUseMedicine   ; REVIVE
@@ -754,10 +754,83 @@ SurfingNoPlaceToGetOffText:
 	text_end
 
 ItemUseScythe:
-	predef UsedCut
-	; ld a, [wActionResultOrTookBattleTurn]
-	; and a
+; .scytheloop
+	xor a
+	ld [wActionResultOrTookBattleTurn], a ; initialise to failure value
+	ld a, [wCurMapTileset]
+	and a ; OVERWORLD
+	jr nz, .nothingToCut
+	dec a
+	ld a, [wTileInFrontOfPlayer]
+	cp $3d ; cut tree
+	jr z, .canScythe
+	cp $52 ; grass
+	jr z, .canScythe
+.nothingToCut
+	ld hl, .NothingToCutText
+	jp PrintText
+	jp CloseTextDisplay
 	ret
+.NothingToCutText
+	text_far _NothingToCutText
+	text_end
+.canScythe
+	ld [wCutTile], a
+	ld a, 1
+	ld [wActionResultOrTookBattleTurn], a ; used cut
+	ld a, [wWhichPokemon]
+	ld hl, wPartyMonNicks
+	call GetPartyMonName
+	ld hl, wd730
+	set 6, [hl]
+	call GBPalWhiteOutWithDelay3
+	call ClearSprites
+	call RestoreScreenTilesAndReloadTilePatterns
+	ld a, SCREEN_HEIGHT_PX
+	ldh [hWY], a
+	call Delay3
+	call LoadGBPal
+	call LoadCurrentMapView
+	call SaveScreenTilesToBuffer2
+	call Delay3
+	xor a
+	ldh [hWY], a
+	ld hl, UsedScytheText
+	call PrintText
+	call LoadScreenTilesFromBuffer2
+	ld hl, wd730
+	res 6, [hl]
+	ld a, $ff
+	ld [wUpdateSpritesEnabled], a
+	call InitCutAnimOAM
+	ld de, CutTreeBlockSwaps
+	call ReplaceTreeTileBlock
+	call RedrawMapView
+	farcall AnimCut
+	ld a, $1
+	ld [wUpdateSpritesEnabled], a
+	ld a, SFX_CUT
+	call PlaySound
+	ld a, $90
+	ldh [hWY], a
+	call UpdateSprites
+	jp RedrawMapView
+UsedScytheText:
+	text_far _UsedScytheText
+	text_end
+
+ItemUseFlashlight:
+	xor a
+	ld [wMapPalOffset], a
+	ld hl, .flashLightsAreaText
+	call PrintText
+	call GBPalWhiteOutWithDelay3
+	call RestoreScreenTilesAndReloadTilePatterns
+	jp CloseTextDisplay
+	ret
+.flashLightsAreaText
+	text_far _FlashLightsAreaText
+	text_end
 
 ItemUsePokedex:
 	predef_jump ShowPokedexMenu

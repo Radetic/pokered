@@ -67,7 +67,7 @@ KeyItemBitfield:
 	FALSE, \ ; LEAF_STONE
 	TRUE,  \ ; CARD_KEY
 	FALSE, \ ; NUGGET
-	FALSE, \ ; PP_UP_2
+	TRUE,  \ ; FLASHLIGHT, previously PP_UP_2
 	FALSE, \ ; POKE_DOLL
 	FALSE, \ ; FULL_HEAL
 	FALSE, \ ; REVIVE
