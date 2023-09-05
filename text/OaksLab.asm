@@ -25,6 +25,29 @@ _OaksLabText39::
 	cont "contain #MON!"
 	done
 
+IF DEF(_LNKN) || DEF(_RADZ) || DEF(_GLAU)
+_OaksLabCharmanderText::
+	text "Do you want"
+	line "a @"
+	text_ram wcd6d
+	text "?@"
+	text_end
+
+_OaksLabSquirtleText::
+	text "Do you want"
+	line "a @"
+	text_ram wcd6d
+	text "?@"
+	text_end
+
+_OaksLabBulbasaurText::
+	text "Do you want"
+	line "a @"
+	text_ram wcd6d
+	text "?@"
+	text_end
+
+ELSE
 _OaksLabCharmanderText::
 	text "So! You want the"
 	line "fire #MON,"
@@ -42,6 +65,8 @@ _OaksLabBulbasaurText::
 	line "plant #MON,"
 	cont "BULBASAUR?"
 	done
+
+ENDC ; IF DEF(_LNKN) || DEF(_RADZ) || DEF(_GLAU)
 
 _OaksLabMonEnergeticText::
 	text "This #MON is"
