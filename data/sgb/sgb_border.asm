@@ -1,20 +1,25 @@
 BorderPalettes:
-IF DEF(_RED)
+IF DEF(_RADZ) || DEF(_GREEN)
+	INCBIN "gfx/sgb/green_border.tilemap"
+ELIF DEF(_LNKN) || DEF(_RED)
 	INCBIN "gfx/sgb/red_border.tilemap"
-ENDC
-IF DEF(_BLUE)
+ELIF DEF(_GLAU) || DEF(_BLUE)
 	INCBIN "gfx/sgb/blue_border.tilemap"
 ENDC
 
 	ds $100
 
-IF DEF(_RED)
+IF DEF(_RADZ) || DEF(_GREEN)
+	RGB 30,29,29 ; PAL_SGB1
+	RGB 11,16,08
+	RGB 16,23,12
+	RGB 22,31,16
+ELIF DEF(_LNKN) || DEF(_RED)
 	RGB 30,29,29 ; PAL_SGB1
 	RGB 25,22,25
 	RGB 25,17,21
 	RGB 24,14,12
-ENDC
-IF DEF(_BLUE)
+ELIF DEF(_GLAU) || DEF(_BLUE)
 	RGB 0,0,0 ; PAL_SGB1 (the first color is not defined, but if used, turns up as 30,29,29... o_O)
 	RGB 10,17,26
 	RGB 5,9,20
@@ -23,13 +28,17 @@ ENDC
 
 	ds $18
 
-IF DEF(_RED)
+IF DEF(_RADZ) || DEF(_GREEN)
 	RGB 30,29,29 ; PAL_SGB2
 	RGB 22,31,16
 	RGB 27,20,6
 	RGB 15,15,15
-ENDC
-IF DEF(_BLUE)
+ELIF DEF(_LNKN) || DEF(_RED)
+	RGB 30,29,29 ; PAL_SGB2
+	RGB 22,31,16
+	RGB 27,20,6
+	RGB 15,15,15
+ELIF DEF(_GLAU) || DEF(_BLUE)
 	RGB 30,29,29 ; PAL_SGB2
 	RGB 27,11,6
 	RGB 5,9,20
@@ -38,13 +47,17 @@ ENDC
 
 	ds $18
 
-IF DEF(_RED)
+IF DEF(_RADZ) || DEF(_GREEN)
 	RGB 30,29,29 ; PAL_SGB3
 	RGB 31,31,17
 	RGB 18,21,29
 	RGB 15,15,15
-ENDC
-IF DEF(_BLUE)
+ELIF DEF(_LNKN) || DEF(_RED)
+	RGB 30,29,29 ; PAL_SGB3
+	RGB 31,31,17
+	RGB 18,21,29
+	RGB 15,15,15
+ELIF DEF(_GLAU) || DEF(_BLUE)
 	RGB 30,29,29 ; PAL_SGB3
 	RGB 12,15,11
 	RGB 5,9,20
@@ -54,9 +67,10 @@ ENDC
 	ds $18
 
 SGBBorderGraphics:
-IF DEF(_RED)
+IF DEF(_RADZ) || DEF(_GREEN)
+	INCBIN "gfx/sgb/green_border.2bpp"
+ELIF DEF(_LNKN) || DEF(_RED)
 	INCBIN "gfx/sgb/red_border.2bpp"
-ENDC
-IF DEF(_BLUE)
+ELIF DEF(_GLAU) || DEF(_BLUE)
 	INCBIN "gfx/sgb/blue_border.2bpp"
 ENDC
