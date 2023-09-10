@@ -229,7 +229,11 @@ FightingDojoText6:
 	call PrintText
 	jr .done
 .GetMon
+IF DEF(_RADZ) || DEF(_LNKN) || DEF(_GLAU)
+	ld a, PIKACHU
+ELSE
 	ld a, HITMONLEE
+ENDC
 	call DisplayPokedex
 	ld hl, WantHitmonleeText
 	call PrintText
@@ -239,7 +243,11 @@ FightingDojoText6:
 	jr nz, .done
 	ld a, [wcf91]
 	ld b, a
+IF DEF(_RADZ) || DEF(_LNKN) || DEF(_GLAU)
+	ld c, 5
+ELSE
 	ld c, 30
+ENDC
 	call GivePokemon
 	jr nc, .done
 
@@ -264,7 +272,11 @@ FightingDojoText7:
 	call PrintText
 	jr .done
 .GetMon
+IF DEF(_RADZ) || DEF(_LNKN) || DEF(_GLAU)
+	ld a, EEVEE
+ELSE
 	ld a, HITMONCHAN
+ENDC
 	call DisplayPokedex
 	ld hl, WantHitmonchanText
 	call PrintText
@@ -274,7 +286,11 @@ FightingDojoText7:
 	jr nz, .done
 	ld a, [wcf91]
 	ld b, a
+IF DEF(_RADZ) || DEF(_LNKN) || DEF(_GLAU)
+	ld c, 5
+ELSE
 	ld c, 30
+ENDC
 	call GivePokemon
 	jr nc, .done
 	SetEvents EVENT_GOT_HITMONCHAN, EVENT_DEFEATED_FIGHTING_DOJO

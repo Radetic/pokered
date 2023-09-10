@@ -113,18 +113,39 @@ _FightingDojoAfterBattleText4::
 	done
 
 _WantHitmonleeText::
+IF DEF(_RADZ) || DEF(_LNKN) || DEF(_GLAU)
+	text "You want the"
+	line "electrifying"
+	cont "PIKACHU?"
+	done
+ELSE
 	text "You want the"
 	line "hard kicking"
 	cont "HITMONLEE?"
 	done
+ENDC
 
 _WantHitmonchanText::
+IF DEF(_RADZ) || DEF(_LNKN) || DEF(_GLAU)
+	text "You want the"
+	line "Cambrian master"
+	cont "EEVEE?"
+	done
+ELSE
 	text "You want the"
 	line "piston punching"
 	cont "HITMONCHAN?"
 	done
+ENDC
 
 _OtherHitmonText::
+
+IF DEF(_RADZ) || DEF(_LNKN) || DEF(_GLAU)
+	text "Come back when"
+	line "you're a master"
+	done
+ELSE
 	text "Better not get"
 	line "greedy..."
 	done
+ENDC
