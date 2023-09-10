@@ -3,7 +3,11 @@ SaffronCity_Object:
 
 	def_warps
 	warp 7, 5, 0, COPYCATS_HOUSE_1F
+IF DEF(_RADZ) || DEF(_LNKN) || DEF(_GLAU)
 	warp 26, 3, 0, VIRIDIAN_GYM
+ELSE
+	warp 26, 3, 0, FIGHTING_DOJO
+ENDC
 	warp 34, 3, 0, SAFFRON_GYM
 	warp 13, 11, 0, SAFFRON_PIDGEY_HOUSE
 	warp 25, 11, 0, SAFFRON_MART

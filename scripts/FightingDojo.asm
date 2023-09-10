@@ -229,7 +229,11 @@ FightingDojoText6:
 	call PrintText
 	jr .done
 .GetMon
-IF DEF(_RADZ) || DEF(_LNKN) || DEF(_GLAU)
+IF DEF(_RADZ)
+	ld a, SPEAROW
+ELIF DEF(_LNKN)
+	ld a, ABRA
+ELIF DEF(_GLAU)
 	ld a, PIKACHU
 ELSE
 	ld a, HITMONLEE
@@ -272,7 +276,11 @@ FightingDojoText7:
 	call PrintText
 	jr .done
 .GetMon
-IF DEF(_RADZ) || DEF(_LNKN) || DEF(_GLAU)
+IF DEF(_RADZ)
+	ld a, VOLTORB
+ELIF DEF(_LNKN)
+	ld a, SLOWPOKE
+ELIF DEF(_GLAU)
 	ld a, EEVEE
 ELSE
 	ld a, HITMONCHAN

@@ -2,8 +2,13 @@ ViridianGym_Object:
 	db $3 ; border block
 
 	def_warps
+IF DEF(_RADZ) || DEF(_LNKN) || DEF(_GLAU)
 	warp 16, 17, 1, LAST_MAP
 	warp 17, 17, 1, LAST_MAP
+ELSE
+	warp 16, 17, 4, LAST_MAP
+	warp 17, 17, 4, LAST_MAP
+ENDC
 
 	def_signs
 

@@ -113,7 +113,17 @@ _FightingDojoAfterBattleText4::
 	done
 
 _WantHitmonleeText::
-IF DEF(_RADZ) || DEF(_LNKN) || DEF(_GLAU)
+IF DEF(_RADZ)
+	text "You want the"
+	line "bird of prey"
+	cont "SPEAROW?"
+	done
+ELIF DEF(_LNKN)
+	text "You want the"
+	line "teleporting"
+	cont "ABRA?"
+	done
+ELIF DEF(_GLAU)
 	text "You want the"
 	line "electrifying"
 	cont "PIKACHU?"
@@ -126,7 +136,17 @@ ELSE
 ENDC
 
 _WantHitmonchanText::
-IF DEF(_RADZ) || DEF(_LNKN) || DEF(_GLAU)
+IF DEF(_RADZ)
+	text "You want the"
+	line "live #Ball"
+	cont "VOLTORB?"
+	done
+ELIF DEF(_LNKN)
+	text "You want the"
+	line "super chill"
+	cont "SLOWPOKE?"
+	done
+ELIF DEF(_GLAU)
 	text "You want the"
 	line "Cambrian master"
 	cont "EEVEE?"
