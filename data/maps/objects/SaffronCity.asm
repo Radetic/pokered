@@ -3,7 +3,7 @@ SaffronCity_Object:
 
 	def_warps
 	warp 7, 5, 0, COPYCATS_HOUSE_1F
-	warp 26, 3, 0, FIGHTING_DOJO
+	warp 26, 3, 0, VIRIDIAN_GYM
 	warp 34, 3, 0, SAFFRON_GYM
 	warp 13, 11, 0, SAFFRON_PIDGEY_HOUSE
 	warp 25, 11, 0, SAFFRON_MART

@@ -58,7 +58,8 @@ TrainerDataPointers:
 
 YoungsterData:
 ; Route 3
-	db 11, RATTATA, EKANS, 0
+	; db 11, RATTATA, EKANS, 0
+	db 4, RATTATA, 0
 	db 14, SPEAROW, 0
 ; Mt. Moon 1F
 	db 10, RATTATA, RATTATA, ZUBAT, 0
@@ -132,7 +133,8 @@ LassData:
 
 SailorData:
 ; SS Anne Stern
-	db 18, MACHOP, SHELLDER, 0
+	; db 18, MACHOP, SHELLDER, 0
+	db 3, STARYU, HORSEA, SHELLDER, 0
 	db 17, MACHOP, TENTACOOL, 0
 ; SS Anne B1F Rooms
 	db 21, SHELLDER, 0
@@ -201,7 +203,8 @@ JrTrainerFData:
 
 PokemaniacData:
 ; Route 10
-	db 30, RHYHORN, LICKITUNG, 0
+	; db 30, RHYHORN, LICKITUNG, 0
+	db 5, BULBASAUR, CHARMANDER, SQUIRTLE, 0
 	db 20, CUBONE, SLOWPOKE, 0
 ; Rock Tunnel B1F
 	db 20, SLOWPOKE, SLOWPOKE, SLOWPOKE, 0
@@ -214,7 +217,8 @@ PokemaniacData:
 
 SuperNerdData:
 ; Mt. Moon 1F
-	db 11, MAGNEMITE, VOLTORB, 0
+	; db 11, MAGNEMITE, VOLTORB, 0
+	db 5, TANGELA, TENTACOOL, PIDGEY, 0
 ; Mt. Moon B2F
 	db 12, GRIMER, VOLTORB, KOFFING, 0
 ; Route 8
@@ -313,7 +317,8 @@ UnusedJugglerData:
 
 FisherData:
 ; SS Anne 2F Rooms
-	db 17, GOLDEEN, TENTACOOL, GOLDEEN, 0
+	; db 17, GOLDEEN, TENTACOOL, GOLDEEN, 0
+	db 2, GOLDEEN, POLIWAG, 0
 ; SS Anne B1F Rooms
 	db 17, TENTACOOL, STARYU, SHELLDER, 0
 ; Route 12

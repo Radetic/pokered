@@ -6,7 +6,7 @@ ViridianCity_Object:
 	warp 29, 19, 0, VIRIDIAN_MART
 	warp 21, 15, 0, VIRIDIAN_SCHOOL_HOUSE
 	warp 21, 9, 0, VIRIDIAN_NICKNAME_HOUSE
-	warp 32, 7, 0, VIRIDIAN_GYM
+	warp 32, 7, 0, FIGHTING_DOJO
 
 	def_signs
 	sign 17, 17, 8 ; ViridianCityText8
