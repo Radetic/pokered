@@ -13,16 +13,16 @@ IF DEF(_RADZ) || DEF(LNKN) || DEF(_GLAU)
 	db 5, SQUIRTLE
 
 	db 5 ; water encounter rate
-	db 2, TENTACOOL
-	db 2, TENTACOOL
+	db 3, TENTACOOL
+	db 3, TENTACOOL
 	db 4, TENTACOOL
 	db 5, TENTACOOL
 	db 5, TENTACOOL
 	db 2, POLIWAG
-	db 3, GOLDEEN
 	db 3, STARYU
 	db 3, HORSEA
 	db 3, SHELLDER
+	db 3, GOLDEEN
 ELSE
 	db 25 ; grass encounter rate
 	db 21, RATTATA

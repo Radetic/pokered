@@ -1,5 +1,17 @@
 CaveMons:
 	db 20 ; grass encounter rate
+IF DEF(_RADZ) || DEF(LNKN) || DEF(_GLAU)
+	db 3, DIGLETT
+	db 3, DIGLETT
+	db 3, DIGLETT
+	db 4, DIGLETT
+	db 3, DIGLETT
+	db 3, DIGLETT
+	db 4, DIGLETT
+	db 4, DIGLETT
+	db 6, DIGLETT
+	db 6, DIGLETT
+ELSE
 	db 18, DIGLETT
 	db 19, DIGLETT
 	db 17, DIGLETT
@@ -10,5 +22,6 @@ CaveMons:
 	db 22, DIGLETT
 	db 29, DUGTRIO
 	db 31, DUGTRIO
+ENDC
 
 	db 0 ; water encounter rate
