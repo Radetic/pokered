@@ -1,6 +1,17 @@
 ForestMons:
 	db 8 ; grass encounter rate
-IF DEF(_RED)
+IF DEF(_RADZ) || DEF(_LNKN) || DEF(_GLAU)
+	db  4, WEEDLE
+	db  4, CATERPIE
+	db  5, KAKUNA
+	db  5, METAPOD
+	db  5, WEEDLE
+	db  5, CATERPIE
+	db  4, KAKUNA
+	db  6, KAKUNA
+	db  6, METAPOD
+	db  5, PIKACHU
+ELIF DEF(_RED)
 	db  4, WEEDLE
 	db  5, KAKUNA
 	db  3, WEEDLE
@@ -9,8 +20,9 @@ IF DEF(_RED)
 	db  6, KAKUNA
 	db  4, METAPOD
 	db  3, CATERPIE
-ENDC
-IF DEF(_BLUE)
+	db  3, PIKACHU
+	db  5, PIKACHU
+ELIF DEF(_BLUE)
 	db  4, CATERPIE
 	db  5, METAPOD
 	db  3, CATERPIE
@@ -19,8 +31,8 @@ IF DEF(_BLUE)
 	db  6, METAPOD
 	db  4, KAKUNA
 	db  3, WEEDLE
-ENDC
 	db  3, PIKACHU
 	db  5, PIKACHU
+ENDC
 
 	db 0 ; water encounter rate
