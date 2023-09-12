@@ -70,6 +70,14 @@ FightingDojoScript3:
 .asm_5cde4
 	ld a, $f0
 	ld [wJoyIgnore], a
+IF DEF(_RADZ) || DEF(_LNKN) || DEF(_GLAU)
+	; gives badge
+	ld hl, wObtainedBadges
+	set BIT_BOULDERBADGE, [hl]
+	ld hl, wBeatGymFlags
+	set BIT_BOULDERBADGE, [hl]
+ENDC
+	; deactivate gym trainers
 	SetEventRange EVENT_BEAT_KARATE_MASTER, EVENT_BEAT_FIGHTING_DOJO_TRAINER_3
 	ld a, $8
 	ldh [hSpriteIndexOrTextID], a
