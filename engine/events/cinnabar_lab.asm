@@ -36,7 +36,21 @@ GiveFossilToCinnabarLab::
 	add hl, de
 	ld a, [hl]
 	ldh [hItemToRemoveID], a
-IF DEF(_RADZ) || DEF(_LNKN)
+
+IF DEF(_RADZ)
+	cp DOME_FOSSIL
+	jr z, .choseDomeFossil
+	cp HELIX_FOSSIL
+	jr z, .choseHelixFossil
+	ld b, BULBASAUR
+	jr .fossilSelected
+.choseHelixFossil
+	ld b, CHARMANDER
+	jr .fossilSelected
+.choseDomeFossil
+	ld b, SQUIRTLE
+
+ELIF DEF(_LNKN)
 	cp DOME_FOSSIL
 	jr z, .choseDomeFossil
 	cp HELIX_FOSSIL
@@ -48,6 +62,7 @@ IF DEF(_RADZ) || DEF(_LNKN)
 	jr .fossilSelected
 .choseDomeFossil
 	ld b, MOLTRES
+
 ELSE
 	cp DOME_FOSSIL
 	jr z, .choseDomeFossil
@@ -61,6 +76,7 @@ ELSE
 .choseDomeFossil
 	ld b, KABUTO
 ENDC
+
 .fossilSelected
 	ld [wFossilItem], a
 	ld a, b
