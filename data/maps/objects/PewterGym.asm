@@ -2,8 +2,13 @@ PewterGym_Object:
 	db $3 ; border block
 
 	def_warps
+IF DEF(_RADZ) || DEF(LNKN) || DEF(_GLAU)
+	warp 4, 13, 1, LAST_MAP
+	warp 5, 13, 1, LAST_MAP
+ELSE
 	warp 4, 13, 2, LAST_MAP
 	warp 5, 13, 2, LAST_MAP
+ENDC
 
 	def_signs
 

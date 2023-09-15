@@ -3,7 +3,11 @@ CinnabarIsland_Object:
 
 	def_warps
 	warp 6, 3, 1, POKEMON_MANSION_1F
+IF DEF(_RADZ) || DEF(LNKN) || DEF(_GLAU)
+	warp 18, 3, 0, PEWTER_GYM
+ELSE
 	warp 18, 3, 0, CINNABAR_GYM
+ENDC
 	warp 6, 9, 0, CINNABAR_LAB
 	warp 11, 11, 0, CINNABAR_POKECENTER
 	warp 15, 11, 0, CINNABAR_MART
