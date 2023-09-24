@@ -7,10 +7,10 @@ IF DEF(_RADZ) || DEF(_LNKN) || DEF(_GLAU)
 	db  4, RATTATA
 	db  5, PIDGEY
 	db  5, RATTATA
-	db  4, WEEDLE
 	db  4, CATERPIE
-	db  5, WEEDLE
+	db  4, WEEDLE
 	db  5, CATERPIE
+	db  5, WEEDLE
 ELIF DEF(_RED)
 	db  3, RATTATA
 	db  3, PIDGEY
