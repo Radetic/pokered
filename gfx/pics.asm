@@ -407,7 +407,12 @@ Rival1Pic::        INCBIN "gfx/trainers/rival1.pic"
 
 ENDC
 
+IF DEF(_GLAU)
+ProfOakPic::       INCBIN "gfx/trainers/agatha.pic"
+ELSE
 ProfOakPic::       INCBIN "gfx/trainers/prof.oak.pic"
+ENDC
+
 ChiefPic::
 ScientistPic::     INCBIN "gfx/trainers/scientist.pic"
 GiovanniPic::      INCBIN "gfx/trainers/giovanni.pic"
@@ -456,5 +461,12 @@ ELSE
 ChannelerPic::     INCBIN "gfx/trainers/channeler.pic"
 ENDC
 
+IF DEF(_GLAU)
+AgathaPic::        INCBIN "gfx/trainers/prof.oak.pic"
+
+ELSE
 AgathaPic::        INCBIN "gfx/trainers/agatha.pic"
+
+ENDC
+
 LancePic::         INCBIN "gfx/trainers/lance.pic"
