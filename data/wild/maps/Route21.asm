@@ -1,5 +1,5 @@
 Route21Mons:
-IF DEF(_RADZ) || DEF(LNKN) || DEF(_GLAU)
+IF DEF(LNKN) || DEF(_GLAU)
 	db 25 ; grass encounter rate
 	db 2, RATTATA
 	db 2, PIDGEY
@@ -13,12 +13,36 @@ IF DEF(_RADZ) || DEF(LNKN) || DEF(_GLAU)
 	db 5, SQUIRTLE
 
 	db 5 ; water encounter rate
-	db 3, TENTACOOL
+	db 2, MAGIKARP
+	db 3, POLIWAG
 	db 3, TENTACOOL
 	db 4, TENTACOOL
 	db 5, TENTACOOL
 	db 5, TENTACOOL
-	db 2, POLIWAG
+	db 3, STARYU
+	db 3, HORSEA
+	db 3, SHELLDER
+	db 3, GOLDEEN
+ELIF DEF(_RADZ)
+	db 25 ; grass encounter rate
+	db 2, RATTATA
+	db 2, PIDGEY
+	db 5, RATTATA
+	db 2, RATTATA
+	db 2, PIDGEY
+	db 5, PIDGEY
+	db 5, PIDGEY
+	db 4, TANGELA
+	db 5, TANGELA
+	db 5, TANGELA
+
+	db 5 ; water encounter rate
+	db 2, MAGIKARP
+	db 3, POLIWAG
+	db 3, TENTACOOL
+	db 4, TENTACOOL
+	db 5, TENTACOOL
+	db 5, TENTACOOL
 	db 3, STARYU
 	db 3, HORSEA
 	db 3, SHELLDER

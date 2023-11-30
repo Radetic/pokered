@@ -4,7 +4,7 @@ PewterCity_Object:
 	def_warps
 	warp 14, 7, 0, MUSEUM_1F
 	warp 19, 5, 2, MUSEUM_1F
-IF DEF(_RADZ) || DEF(LNKN) || DEF(_GLAU)
+IF DEF(_GLAU)
 	warp 16, 17, 0, CINNABAR_GYM
 ELSE
 	warp 16, 17, 0, PEWTER_GYM

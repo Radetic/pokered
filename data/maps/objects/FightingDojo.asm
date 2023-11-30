@@ -2,7 +2,7 @@ FightingDojo_Object:
 	db $3 ; border block
 
 	def_warps
-IF DEF(_RADZ) || DEF(_LNKN) || DEF(_GLAU)
+IF DEF(_GLAU)
 	warp 4, 11, 4, LAST_MAP
 	warp 5, 11, 4, LAST_MAP
 ELSE
@@ -13,7 +13,7 @@ ENDC
 	def_signs
 
 	def_objects
-IF DEF(_RADZ) || DEF(_LNKN) || DEF(_GLAU)
+IF DEF(_GLAU)
 	object SPRITE_SUPER_NERD, 5, 3, STAY, DOWN, 1, OPP_POKEMANIAC, 1 ; school teacher
 	object SPRITE_YOUNGSTER, 3, 4, STAY, RIGHT, 2, OPP_YOUNGSTER, 1 ;  only trainee
 	object SPRITE_COOLTRAINER_F, 3, 6, STAY, RIGHT, 3 ; student 2

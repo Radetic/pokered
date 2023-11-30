@@ -37,6 +37,12 @@ IF DEF (_GLAU)
 RedSprite::              INCBIN "gfx/sprites/brunette_girl.2bpp"
 BlueSprite::             INCBIN "gfx/sprites/biker.2bpp"
 OakSprite::              INCBIN "gfx/sprites/agatha.2bpp"
+
+ELIF DEF (_RADZ)
+RedSprite::              INCBIN "gfx/sprites/blue.2bpp"
+BlueSprite::             INCBIN "gfx/sprites/brunette_girl.2bpp"
+OakSprite::              INCBIN "gfx/sprites/mr_fuji.2bpp"
+
 ELSE
 RedSprite::              INCBIN "gfx/sprites/red.2bpp"
 BlueSprite::             INCBIN "gfx/sprites/blue.2bpp"

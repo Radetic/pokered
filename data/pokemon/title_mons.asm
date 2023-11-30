@@ -1,22 +1,22 @@
 TitleMons:
 ; mons on the title screen are randomly chosen from here
 IF DEF(_RADZ)
-	db RHYDON
-	db STARTER1
-	db STARTER2
-	db STARTER3
-	db SPEAROW
-	db VOLTORB
-	db NIDOKING
-	db SLOWBRO
-	db IVYSAUR
-	db EXEGGUTOR
-	db LICKITUNG
-	db EXEGGCUTE
-	db GRIMER
-	db GENGAR
+	db PIDGEY
+	db RATTATA
+	db MAGIKARP
+	db POLIWAG
+	db TENTACOOL
+	db STARYU
+	db HORSEA
+	db SHELLDER
+	db GOLDEEN
+	db TANGELA
+	db DIGGLET
+	db SANDSHREW
+	db GEODUDE
+	db ONIX
 	db NIDORAN_F
-	db NIDOQUEEN
+	db NIDORAN_M
 	
 ELIF DEF(_LNKN)
 	db STARTER3

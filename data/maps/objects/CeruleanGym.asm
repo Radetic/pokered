@@ -2,8 +2,13 @@ CeruleanGym_Object:
 	db $3 ; border block
 
 	def_warps
+IF DEF(_RADZ)
+	warp 4, 13, 1, LAST_MAP
+	warp 5, 13, 1, LAST_MAP
+ELSE
 	warp 4, 13, 3, LAST_MAP
 	warp 5, 13, 3, LAST_MAP
+ENDC
 
 	def_signs
 
