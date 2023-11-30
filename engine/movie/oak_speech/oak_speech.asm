@@ -93,7 +93,7 @@ OakSpeech:
 	call GBFadeOutToWhite
 	call ClearScreen
 IF DEF(_RADZ)
-	ld a, RHYDON ; pokemon intro example
+	ld a, PIDGEY ; pokemon intro example
 ELIF DEF(_LNKN)
 	ld a, ARCANINE ; pokemon intro example
 ELIF DEF(_GLAU)
@@ -196,7 +196,17 @@ OakSpeechText1:
 	text_end
 OakSpeechText2:
 	text_far _OakSpeechText2A
+IF DEF(_RADZ)
+	; sound_cry_pidgey
+	sound_cry_pidgeot
+ELIF DEF(_LNKN)
+	; sound_cry_arcanine
+ELIF DEF(_GLAU)
+	; sound_cry_haunter
+	sound_cry_dewgong
+ELSE
 	sound_cry_nidorina
+ENDC
 	text_far _OakSpeechText2B
 	text_end
 IntroducePlayerText:

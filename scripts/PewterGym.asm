@@ -16,11 +16,19 @@ PewterGym_Script:
 	ld de, .LeaderName
 	jp LoadGymLeaderAndCityName
 
+IF DEF(_RADZ)
+.CityName:
+	db "VIRIDIAN CITY@"
+
+.LeaderName:
+	db "TAKESHI@"
+ELSE
 .CityName:
 	db "PEWTER CITY@"
 
 .LeaderName:
 	db "BROCK@"
+ENDC
 
 PewterGymScript_5c3bf:
 	xor a
@@ -60,10 +68,12 @@ PewterGymScript_5c3df:
 	ldh [hSpriteIndexOrTextID], a
 	call DisplayTextID
 .gymVictory
+IF !DEF(_RADZ)
 	ld hl, wObtainedBadges
 	set BIT_BOULDERBADGE, [hl]
 	ld hl, wBeatGymFlags
 	set BIT_BOULDERBADGE, [hl]
+ENDC
 
 	ld a, HS_GYM_GUY
 	ld [wMissableObjectIndex], a

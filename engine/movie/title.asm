@@ -117,12 +117,18 @@ DisplayTitleScreen:
 	call SaveScreenTilesToBuffer2
 	call LoadScreenTilesFromBuffer2
 	call EnableLCD
-IF DEF(_GREEN)
-	ld a, RHYDON ; which Pokemon to show first on the title screen
-ELIF DEF(_RED)
+IF DEF(_RADZ)
+	ld a, PIDGEY
+ELIF DEF(_GLAU)
+	ld a, GENGAR
+ELIF DEF(_LNKN)
+	ld a, PIKACHU ; which Pokemon to show first on the title screen
+ELIF DEF(_GREEN)
 	ld a, STARTER3 ; which Pokemon to show first on the title screen
+ELIF DEF(_RED)
+	ld a, STARTER1 ; which Pokemon to show first on the title screen
 ELIF DEF(_BLUE)
-	ld a, GENGAR ; which Pokemon to show first on the title screen
+	ld a, STARTER2 ; which Pokemon to show first on the title screen
 ENDC
 
 	ld [wTitleMonSpecies], a

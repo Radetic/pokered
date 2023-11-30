@@ -7,10 +7,17 @@ _PewterGymText_5c4a3::
 	line "very gifted as a"
 	cont "#MON trainer!"
 
+IF DEF(_RADZ)
+	para "Go to the GYM in"
+	line "CINNABAR and test"
+	cont "your abilities!"
+	done
+ELSE
 	para "Go to the GYM in"
 	line "CERULEAN and test"
 	cont "your abilities!"
 	done
+ENDC
 
 _TM34PreReceiveText::
 	text "Wait! Take this"
@@ -55,12 +62,21 @@ _PewterGymText_5c4bc::
 	text "I took"
 	line "you for granted."
 
+IF DEF(_RADZ)
+	para "As proof of your"
+	line "victory, choose"
+	cont "your prize now!"
+
+	para "<PLAYER>, you've"
+	line "graduated here!@"
+ELSE
 	para "As proof of your"
 	line "victory, here's"
 	cont "the BOULDERBADGE!"
 
 	para "<PLAYER> received"
 	line "the BOULDERBADGE!@"
+ENDC
 	text_end
 
 _PewterGymText_5c4c1::
@@ -85,7 +101,11 @@ _PewterGymBattleText1::
 
 	para "You're still light"
 	line "years from facing"
+IF DEF(_RADZ) || DEF(_GLAU)
+	cont "TAKESHI!"
+ELSE
 	cont "BROCK!"
+ENDC
 	done
 
 _PewterGymEndBattleText1::
@@ -99,7 +119,11 @@ _PewterGymEndBattleText1::
 _PewterGymAfterBattleText1::
 	text "You're pretty hot,"
 	line "but not as hot"
+IF DEF(_RADZ) || DEF(_GLAU)
+	cont "as TAKESHI!"
+ELSE
 	cont "as BROCK!"
+ENDC
 	done
 
 _PewterGymText_5c515::
