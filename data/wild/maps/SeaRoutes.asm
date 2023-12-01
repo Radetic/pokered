@@ -4,8 +4,8 @@ WaterMons:
 IF DEF(_RADZ) || DEF(LNKN) || DEF(_GLAU)
 	db 5 ; water encounter rate
 	db 3, MAGIKARP
-	db 4, POLIWAG
 	db 4, TENTACOOL
+	db 4, POLIWAG
 	db 5, TENTACOOL
 	db 6, TENTACOOL
 	db 6, TENTACOOL

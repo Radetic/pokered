@@ -38,8 +38,8 @@ ELIF DEF(_RADZ)
 
 	db 5 ; water encounter rate
 	db 2, MAGIKARP
-	db 3, POLIWAG
 	db 3, TENTACOOL
+	db 3, POLIWAG
 	db 4, TENTACOOL
 	db 5, TENTACOOL
 	db 5, TENTACOOL
