@@ -1,24 +1,9 @@
 _PewterGymText_5c49e::
-IF DEF(_RADZ)
+IF DEF(_RADZ) || DEF(_GLAU)
 	text "I'm TAKESHI!"
-	line "I'm VIRIDIAN's"
-	cont "trainer's TEACHER!"
-
-	para "I believe in rock"
-	line "hard defense and"
-	cont "determination!"
-
-	para "Hence my strongest"
-	line "#MON are both"
-	cont "rock-type!"
-
-	para "Do you still want"
-	line "to challenge me?"
-	cont "Fine then! Show"
-	cont "me your best!"
-	done
 ELSE
 	text "I'm BROCK!"
+ENDC
 	line "I'm PEWTER's GYM"
 	cont "LEADER!"
 
@@ -35,4 +20,3 @@ ELSE
 	cont "Fine then! Show"
 	cont "me your best!"
 	done
-ENDC

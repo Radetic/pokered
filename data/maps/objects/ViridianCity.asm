@@ -8,8 +8,6 @@ ViridianCity_Object:
 	warp 21, 9, 0, VIRIDIAN_NICKNAME_HOUSE
 IF DEF(_GLAU)
 	warp 32, 7, 0, FIGHTING_DOJO
-ELIF DEF(_RADZ)
-	warp 32, 7, 0, PEWTER_GYM
 ELSE
 	warp 32, 7, 0, VIRIDIAN_GYM
 ENDC
