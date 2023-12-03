@@ -285,7 +285,15 @@ INCLUDE "engine/battle/read_trainer_party.asm"
 
 INCLUDE "data/trainers/special_moves.asm"
 
+IF DEF(_RADZ)
+INCLUDE "data/trainers/parties_radz.asm"
+ELIF DEF(_LNKN)
+INCLUDE "data/trainers/parties_lnkn.asm"
+ELIF DEF(_GLAU)
+INCLUDE "data/trainers/parties_glau.asm"
+ELSE
 INCLUDE "data/trainers/parties.asm"
+ENDC
 
 TrainerAI:
 	and a
