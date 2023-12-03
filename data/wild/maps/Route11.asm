@@ -1,16 +1,16 @@
 Route11Mons:
 	db 15 ; grass encounter rate
 IF DEF(_RADZ) || DEF(_LNKN) || DEF(_GLAU)
-	db 5, SANDSHREW
-	db 5, EKANS
-	db 6, SPEAROW
-	db 4, SANDSHREW
-	db 5, SPEAROW
-	db 5, DROWZEE
-	db 6, SANDSHREW
-	db 6, EKANS
-	db 8, SPEAROW
-	db 6, DROWZEE
+	db  9, SANDSHREW
+	db  9, EKANS
+	db 10, SPEAROW
+	db  7, SANDSHREW
+	db  8, SPEAROW
+	db  8, DROWZEE
+	db 10, SANDSHREW
+	db 10, EKANS
+	db 12, SPEAROW
+	db 10, DROWZEE
 ELIF DEF(_RED)
 	db 14, EKANS
 	db 15, SPEAROW
