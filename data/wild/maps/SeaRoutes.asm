@@ -3,16 +3,16 @@ WaterMons:
 
 IF DEF(_RADZ) || DEF(LNKN) || DEF(_GLAU)
 	db 5 ; water encounter rate
-	db 3, MAGIKARP
+	db 2, MAGIKARP
+	db 3, POLIWAG
+	db 3, TENTACOOL
 	db 4, TENTACOOL
-	db 4, POLIWAG
 	db 5, TENTACOOL
-	db 6, TENTACOOL
-	db 6, TENTACOOL
-	db 4, STARYU
-	db 4, HORSEA
-	db 4, SHELLDER
-	db 4, GOLDEEN
+	db 5, TENTACOOL
+	db 3, STARYU
+	db 3, HORSEA
+	db 3, SHELLDER
+	db 3, GOLDEEN
 ELSE
 	db 5 ; water encounter rate
 	db  5, TENTACOOL

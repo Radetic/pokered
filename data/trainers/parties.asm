@@ -305,12 +305,21 @@ BurglarData:
 	db 36, GROWLITHE, VULPIX, NINETALES, 0
 	db 41, PONYTA, 0
 	db 37, VULPIX, GROWLITHE, 0
+IF DEF(_RADZ)
+; Mansion 2F
+	db 7, CHARMANDER, CHARMELEON, 0
+; Mansion 3F
+	db 9, NINETALES, 0
+; Mansion B1F
+	db 7, GROWLITHE, PONYTA, 0
+ELSE
 ; Mansion 2F
 	db 34, CHARMANDER, CHARMELEON, 0
 ; Mansion 3F
 	db 38, NINETALES, 0
 ; Mansion B1F
 	db 34, GROWLITHE, PONYTA, 0
+ENDC
 
 EngineerData:
 ; Unused
@@ -577,8 +586,13 @@ ScientistData:
 ; Silph Co. 2F
 	db 26, GRIMER, WEEZING, KOFFING, WEEZING, 0
 	db 28, MAGNEMITE, VOLTORB, MAGNETON, 0
+IF DEF(_RADZ)
+; Silph Co. 3F/Mansion 1F
+	db 6, ELECTRODE, WEEZING, 0
+ELSE
 ; Silph Co. 3F/Mansion 1F
 	db 29, ELECTRODE, WEEZING, 0
+ENDC
 ; Silph Co. 4F
 	db 33, ELECTRODE, 0
 ; Silph Co. 5F
@@ -593,10 +607,17 @@ ScientistData:
 	db 28, VOLTORB, KOFFING, MAGNETON, 0
 ; Silph Co. 10F
 	db 29, MAGNEMITE, KOFFING, 0
+IF DEF(_RADZ)
+; Mansion 3F
+	db 7, MAGNEMITE, MAGNETON, VOLTORB, 0
+; Mansion B1F
+	db 7, MAGNEMITE, ELECTRODE, 0
+ELSE
 ; Mansion 3F
 	db 33, MAGNEMITE, MAGNETON, VOLTORB, 0
 ; Mansion B1F
 	db 34, MAGNEMITE, ELECTRODE, 0
+ENDC
 
 GiovanniData:
 ; Rocket Hideout B4F
