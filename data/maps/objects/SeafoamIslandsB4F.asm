@@ -14,6 +14,10 @@ SeafoamIslandsB4F_Object:
 	def_objects
 	object SPRITE_BOULDER, 4, 15, STAY, NONE, 1 ; person
 	object SPRITE_BOULDER, 5, 15, STAY, NONE, 2 ; person
+IF DEF(_RADZ)
+	object SPRITE_FOSSIL, 6, 1, STAY, DOWN, 3, STARMIE, 14
+ELSE
 	object SPRITE_BIRD, 6, 1, STAY, DOWN, 3, ARTICUNO, 50
+ENDC
 
 	def_warps_to SEAFOAM_ISLANDS_B4F
