@@ -5,8 +5,6 @@ CinnabarIsland_Object:
 	warp 6, 3, 1, POKEMON_MANSION_1F
 IF DEF(LNKN) || DEF(_GLAU)
 	warp 18, 3, 0, PEWTER_GYM
-ELIF DEF(_RADZ)
-	warp 18, 3, 0, CERULEAN_GYM
 ELSE
 	warp 18, 3, 0, CINNABAR_GYM
 ENDC
