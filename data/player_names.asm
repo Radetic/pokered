@@ -12,9 +12,23 @@ DefaultNamesRival:
 	next "SHIGERU"
 	next "JOHN"
 	db   "@"
-ENDC
 
-IF DEF(_BLUE)
+ELIF DEF(_GREEN)
+DefaultNamesPlayer:
+	db   "NEW NAME"
+	next "GREEN"
+	next "SHIGERU"
+	next "JOHN"
+	db   "@"
+
+DefaultNamesRival:
+	db   "NEW NAME"
+	next "RED"
+	next "SATOSHI"
+	next "JACK"
+	db   "@"
+
+ELIF DEF(_BLUE)
 DefaultNamesPlayer:
 	db   "NEW NAME"
 	next "BLUE"

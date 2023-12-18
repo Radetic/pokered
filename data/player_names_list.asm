@@ -10,9 +10,19 @@ DefaultNamesRivalList:
 	db "GREEN@"
 	db "SHIGERU@"
 	db "JOHN@"
-ENDC
+ELIF DEF(_GREEN)
+DefaultNamesPlayerList:
+	db "NEW NAME@"
+	db "GREEN@"
+	db "SHIGERU@"
+	db "JOHN@"
 
-IF DEF(_BLUE)
+DefaultNamesRivalList:
+	db "NEW NAME@"
+	db "RED@"
+	db "SATOSHI@"
+	db "JACK@"
+ELIF DEF(_BLUE)
 DefaultNamesPlayerList:
 	db "NEW NAME@"
 	db "BLUE@"

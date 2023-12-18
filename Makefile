@@ -69,7 +69,7 @@ endif
 $(pokered_obj):        RGBASMFLAGS += -D _RED
 $(pokeblue_obj):       RGBASMFLAGS += -D _BLUE
 $(pokeblue_debug_obj): RGBASMFLAGS += -D _BLUE -D _DEBUG
-$(pokeroam_obj):       RGBASMFLAGS += -D _ROAM -D _BLUE
+$(pokeroam_obj):       RGBASMFLAGS += -D _ROAM -D _GREEN -D _BLUE
 
 rgbdscheck.o: rgbdscheck.asm
 	$(RGBASM) -o $@ $<
