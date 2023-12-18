@@ -37,20 +37,7 @@ GiveFossilToCinnabarLab::
 	ld a, [hl]
 	ldh [hItemToRemoveID], a
 
-IF DEF(_RADZ)
-	cp DOME_FOSSIL
-	jr z, .choseDomeFossil
-	cp HELIX_FOSSIL
-	jr z, .choseHelixFossil
-	ld b, BULBASAUR
-	jr .fossilSelected
-.choseHelixFossil
-	ld b, CHARMANDER
-	jr .fossilSelected
-.choseDomeFossil
-	ld b, SQUIRTLE
-
-ELIF DEF(_LNKN)
+IF DEF(_LNKN)
 	cp DOME_FOSSIL
 	jr z, .choseDomeFossil
 	cp HELIX_FOSSIL
