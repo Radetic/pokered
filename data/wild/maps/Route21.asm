@@ -1,4 +1,29 @@
 Route21Mons:
+IF DEF(_ROAM)
+	db 25 ; grass encounter rate
+	db 3, RATTATA
+	db 4, PIDGEY
+	db 4, RATTATA
+	db 4, RATTATA
+	db 3, PIDGEY
+	db 4, PIDGEY
+	db 5, PIDGEY
+	db 4, TANGELA
+	db 4, TANGELA
+	db 5, TANGELA
+
+	db 5 ; water encounter rate
+	db 2, MAGIKARP
+	db 3, TENTACOOL
+	db 3, POLIWAG
+	db 4, TENTACOOL
+	db 5, TENTACOOL
+	db 5, TENTACOOL
+	db 3, STARYU
+	db 3, HORSEA
+	db 3, SHELLDER
+	db 3, GOLDEEN
+ELSE
 	db 25 ; grass encounter rate
 	db 21, RATTATA
 	db 23, PIDGEY
@@ -22,3 +47,4 @@ Route21Mons:
 	db 30, TENTACOOL
 	db 35, TENTACOOL
 	db 40, TENTACOOL
+ENDC
