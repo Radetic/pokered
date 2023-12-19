@@ -2,6 +2,18 @@ WaterMons:
 	db 0 ; grass encounter rate
 
 	db 5 ; water encounter rate
+IF DEF(_ROAM)
+	db 3, STARYU
+	db 3, HORSEA
+	db 3, SHELLDER
+	db 3, GOLDEEN
+	db 3, TENTACOOL
+	db 3, TENTACOOL
+	db 3, TENTACOOL
+	db 4, TENTACOOL
+	db 5, TENTACOOL
+	db 5, TENTACOOL
+ELSE
 	db  5, TENTACOOL
 	db 10, TENTACOOL
 	db 15, TENTACOOL
@@ -12,3 +24,4 @@ WaterMons:
 	db 30, TENTACOOL
 	db 35, TENTACOOL
 	db 40, TENTACOOL
+ENDC
