@@ -1,6 +1,17 @@
 MansionMonsB1:
 	db 10 ; grass encounter rate
-IF DEF(_RED)
+IF DEF(_ROAM)
+	db 3, GRIMER
+	db 3, KOFFING
+	db 3, VULPIX
+	db 3, GROWLITHE
+	db 5, GRIMER
+	db 5, KOFFING
+	db 4, MAGMAR
+	db 5, KOFFING
+	db 5, KOFFING
+	db 5, GRIMER
+ELIF DEF(_RED)
 	db 33, KOFFING
 	db 31, KOFFING
 	db 35, GROWLITHE
@@ -11,8 +22,7 @@ IF DEF(_RED)
 	db 35, GRIMER
 	db 42, WEEZING
 	db 42, MUK
-ENDC
-IF DEF(_BLUE)
+ELIF DEF(_BLUE)
 	db 33, GRIMER
 	db 31, GRIMER
 	db 35, VULPIX
