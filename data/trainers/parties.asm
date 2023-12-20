@@ -295,11 +295,11 @@ BurglarData:
 	db 41, PONYTA, 0
 	db 37, VULPIX, GROWLITHE, 0
 ; Mansion 2F
-	db 34, CHARMANDER, CHARMELEON, 0
+	db 7, CHARMANDER, CHARMANDER, 0
 ; Mansion 3F
-	db 38, NINETALES, 0
+	db 8, NINETALES, 0
 ; Mansion B1F
-	db 34, GROWLITHE, PONYTA, 0
+	db 7, GROWLITHE, PONYTA, 0
 
 EngineerData:
 ; Unused
@@ -511,7 +511,7 @@ ScientistData:
 	db 26, GRIMER, WEEZING, KOFFING, WEEZING, 0
 	db 28, MAGNEMITE, VOLTORB, MAGNETON, 0
 ; Silph Co. 3F/Mansion 1F
-	db 29, ELECTRODE, WEEZING, 0
+	db 6, VOLTORB, KOFFING, 0
 ; Silph Co. 4F
 	db 33, ELECTRODE, 0
 ; Silph Co. 5F
@@ -527,9 +527,9 @@ ScientistData:
 ; Silph Co. 10F
 	db 29, MAGNEMITE, KOFFING, 0
 ; Mansion 3F
-	db 33, MAGNEMITE, MAGNETON, VOLTORB, 0
+	db 7, MAGNEMITE, MAGNEMITE, VOLTORB, 0
 ; Mansion B1F
-	db 34, MAGNEMITE, ELECTRODE, 0
+	db 7, MAGNEMITE, VOLTORB, 0
 
 GiovanniData:
 ; Rocket Hideout B4F
