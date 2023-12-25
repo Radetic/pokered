@@ -25,6 +25,30 @@ _OaksLabText39::
 	cont "contain #MON!"
 	done
 
+IF DEF(_ROAM)
+_OaksLabCharmanderText::
+	text "So! You want the"
+	line "@"
+	text_ram wcd6d
+	text "?@"
+	text_end
+
+_OaksLabSquirtleText::
+	text "Is your #MON"
+	line "of choice this"
+	cont "@"
+	text_ram wcd6d
+	text "?@"
+	text_end
+
+_OaksLabBulbasaurText::
+	text "Are you starting"
+	line "your journey"
+	cont "with @"
+	text_ram wcd6d
+	text "?@"
+	text_end
+ELSE
 _OaksLabCharmanderText::
 	text "So! You want the"
 	line "fire #MON,"
@@ -42,6 +66,7 @@ _OaksLabBulbasaurText::
 	line "plant #MON,"
 	cont "BULBASAUR?"
 	done
+ENDC
 
 _OaksLabMonEnergeticText::
 	text "This #MON is"
