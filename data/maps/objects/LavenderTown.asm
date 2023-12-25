@@ -7,7 +7,11 @@ LavenderTown_Object:
 	warp 7, 9, 0, MR_FUJIS_HOUSE
 	warp 15, 13, 0, LAVENDER_MART
 	warp 3, 13, 0, LAVENDER_CUBONE_HOUSE
+IF DEF(_ROAM)
+	warp 7, 13, 1, OAKS_LAB
+ELSE
 	warp 7, 13, 0, NAME_RATERS_HOUSE
+ENDC
 
 	def_signs
 	sign 11, 9, 4 ; LavenderTownText4

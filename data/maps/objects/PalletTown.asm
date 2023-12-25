@@ -4,7 +4,11 @@ PalletTown_Object:
 	def_warps
 	warp 5, 5, 0, REDS_HOUSE_1F
 	warp 13, 5, 0, BLUES_HOUSE
+IF DEF(_ROAM)
+	warp 12, 11, 0, NAME_RATERS_HOUSE
+ELSE
 	warp 12, 11, 1, OAKS_LAB
+ENDC
 
 	def_signs
 	sign 13, 13, 4 ; PalletTownText4

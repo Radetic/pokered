@@ -2,8 +2,13 @@ OaksLab_Object:
 	db $3 ; border block
 
 	def_warps
+IF DEF(_ROAM)
+	warp 4, 11, 5, LAVENDER_TOWN
+	warp 5, 11, 5, LAVENDER_TOWN
+ELSE
 	warp 4, 11, 2, LAST_MAP
 	warp 5, 11, 2, LAST_MAP
+ENDC
 
 	def_signs
 
