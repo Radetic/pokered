@@ -80,6 +80,10 @@ OakSpeech:
 	ld [wItemQuantity], a
 	call AddItemToInventory  ; give SILPH_SCOPE
 	
+	; blackout to starting town instead of Red's house
+	ld a, LAVENDER_TOWN
+	ld [wLastBlackoutMap], a
+	
 	ld hl, wd728
 	set 6, [hl] ; Safron guards won't bother
 	
