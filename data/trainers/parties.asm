@@ -483,13 +483,21 @@ BlackbeltData:
 	db 43, MACHOKE, MACHOP, MACHOKE, 0
 
 Green1Data:
+; First battle (Oak's Lab)
 	db 5, STARTER2, 0
 	db 5, STARTER3, 0
 	db 5, STARTER1, 0
+IF DEF(_ROAM)
+; Pokémon Tower 2F
+	db $FF, 9, STARTER3, 8, STARTER2, 0
+	db $FF, 9, STARTER1, 8, STARTER3, 0
+	db $FF, 9, STARTER2, 8, STARTER1, 0
+ELSE
 ; Route 22
 	db $FF, 9, PIDGEY, 8, STARTER2, 0
 	db $FF, 9, PIDGEY, 8, STARTER3, 0
 	db $FF, 9, PIDGEY, 8, STARTER1, 0
+ENDC
 ; Cerulean City
 	db $FF, 18, PIDGEOTTO, 15, ABRA, 15, RATTATA, 17, STARTER2, 0
 	db $FF, 18, PIDGEOTTO, 15, ABRA, 15, RATTATA, 17, STARTER3, 0
@@ -567,9 +575,12 @@ RocketData:
 	db 23, EKANS, SANDSHREW, ARBOK, 0
 	db 21, KOFFING, ZUBAT, 0
 ; Pokémon Tower 7F
-	db 25, ZUBAT, ZUBAT, GOLBAT, 0
-	db 26, KOFFING, DROWZEE, 0
-	db 23, ZUBAT, RATTATA, RATICATE, ZUBAT, 0
+	; db 25, ZUBAT, ZUBAT, GOLBAT, 0
+	db 11, ZUBAT, ZUBAT, ZUBAT, 0
+	; db 26, KOFFING, DROWZEE, 0
+	db 12, KOFFING, DROWZEE, 0
+	; db 23, ZUBAT, RATTATA, RATICATE, ZUBAT, 0
+	db 9, ZUBAT, RATTATA, RATTATA, ZUBAT, 0
 ; Unused
 	db 26, DROWZEE, KOFFING, 0
 ; Silph Co. 2F
@@ -703,33 +714,46 @@ ChannelerData:
 	db 23, GASTLY, GASTLY, 0
 	db 24, GASTLY, 0
 ; Pokémon Tower 3F
-	db 23, GASTLY, 0
-	db 24, GASTLY, 0
+	; db 23, GASTLY, 0
+	db 6, GASTLY, 0
+	; db 24, GASTLY, 0
+	db 7, GASTLY, 0
 ; Unused
 	db 24, HAUNTER, 0
 ; Pokémon Tower 3F
-	db 22, GASTLY, 0
+	; db 22, GASTLY, 0
+	db 5, GASTLY, 0
 ; Pokémon Tower 4F
-	db 24, GASTLY, 0
-	db 23, GASTLY, GASTLY, 0
+	; db 24, GASTLY, 0
+	db 8, GASTLY, 0
+	; db 23, GASTLY, GASTLY, 0
+	db 7, GASTLY, GASTLY, 0
 ; Unused
 	db 24, GASTLY, 0
 ; Pokémon Tower 4F
-	db 22, GASTLY, 0
+	; db 22, GASTLY, 0
+	db 6, GASTLY, 0
 ; Unused
 	db 24, GASTLY, 0
 ; Pokémon Tower 5F
-	db 23, HAUNTER, 0
+	; db 23, HAUNTER, 0
+	db 7, GASTLY, 0
 ; Unused
 	db 24, GASTLY, 0
 ; Pokémon Tower 5F
-	db 22, GASTLY, 0
-	db 24, GASTLY, 0
-	db 22, HAUNTER, 0
+	; db 22, GASTLY, 0
+	db 6, GASTLY, 0
+	; db 24, GASTLY, 0
+	db 8, GASTLY, 0
+	; db 22, HAUNTER, 0
+	db 6, GASTLY, 0
 ; Pokémon Tower 6F
-	db 22, GASTLY, GASTLY, GASTLY, 0
-	db 24, GASTLY, 0
-	db 24, GASTLY, 0
+	; db 22, GASTLY, GASTLY, GASTLY, 0
+	db 11, GASTLY, GASTLY, GASTLY, 0
+	; db 24, GASTLY, 0
+	db 11, GASTLY, 0
+	; db 24, GASTLY, 0
+	db 11, GASTLY, 0
 ; Saffron Gym
 	db 34, GASTLY, HAUNTER, 0
 	db 38, HAUNTER, 0

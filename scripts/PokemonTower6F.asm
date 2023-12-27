@@ -32,10 +32,17 @@ PokemonTower6Script0:
 	ld a, $6
 	ldh [hSpriteIndexOrTextID], a
 	call DisplayTextID
+IF DEF(_ROAM)
+	ld a, CUBONE
+	ld [wCurOpponent], a
+	ld a, 14
+	ld [wCurEnemyLVL], a
+ELSE
 	ld a, MAROWAK
 	ld [wCurOpponent], a
 	ld a, 30
 	ld [wCurEnemyLVL], a
+ENDC
 	ld a, $4
 	ld [wPokemonTower6FCurScript], a
 	ld [wCurMapScript], a
