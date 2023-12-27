@@ -1,5 +1,17 @@
 TunnelMonsB1:
 	db 15 ; grass encounter rate
+IF DEF(_ROAM)
+	db 3, ZUBAT
+	db 4, ZUBAT
+	db 4, GEODUDE
+	db 3, MACHOP
+	db 3, GEODUDE
+	db 5, ZUBAT
+	db 3, ZUBAT
+	db 4, MACHOP
+	db 2, ONIX
+	db 3, ONIX
+ELSE
 	db 16, ZUBAT
 	db 17, ZUBAT
 	db 17, GEODUDE
@@ -10,5 +22,6 @@ TunnelMonsB1:
 	db 17, MACHOP
 	db 13, ONIX
 	db 15, ONIX
+ENDC
 
 	db 0 ; water encounter rate
