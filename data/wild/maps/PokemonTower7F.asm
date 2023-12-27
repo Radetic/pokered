@@ -2,15 +2,15 @@ TowerMons7:
 	db 15 ; grass encounter rate
 IF DEF(_ROAM)
 	db 3, GASTLY
-	db 4, GASTLY
-	db 4, GASTLY
-	db 5, GASTLY
 	db 3, GASTLY
-	db 7, GASTLY
+	db 4, GASTLY
+	db 4, GASTLY
+	db 3, GASTLY
+	db 6, GASTLY
+	db 3, CUBONE
 	db 4, CUBONE
-	db 5, CUBONE
+	db 6, GASTLY
 	db 7, GASTLY
-	db 8, GASTLY
 ELSE
 	db 21, GASTLY
 	db 22, GASTLY
