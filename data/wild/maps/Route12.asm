@@ -1,6 +1,17 @@
 Route12Mons:
 	db 15 ; grass encounter rate
-IF DEF(_RED)
+IF DEF(_ROAM)
+	db 2, BELLSPROUT
+	db 3, PIDGEY
+	db 3, VENONAT
+	db 3, BELLSPROUT
+	db 3, ODDISH
+	db 4, PIDGEY
+	db 4, BELLSPROUT
+	db 4, ODDISH
+	db 5, BELLSPROUT
+	db 5, ODDISH
+ELIF DEF(_RED)
 	db 24, ODDISH
 	db 25, PIDGEY
 	db 23, PIDGEY
@@ -11,8 +22,7 @@ IF DEF(_RED)
 	db 27, PIDGEY
 	db 28, GLOOM
 	db 30, GLOOM
-ENDC
-IF DEF(_BLUE)
+ELIF DEF(_BLUE)
 	db 24, BELLSPROUT
 	db 25, PIDGEY
 	db 23, PIDGEY
@@ -25,4 +35,18 @@ IF DEF(_BLUE)
 	db 30, WEEPINBELL
 ENDC
 
+IF DEF(_ROAM)
+	db 5 ; water encounter rate
+	db 2, MAGIKARP
+	db 3, GOLDEEN
+	db 3, POLIWAG
+	db 2, TENTACOOL
+	db 5, KRABBY
+	db 5, GOLDEEN
+	db 5, MAGIKARP
+	db 2, MAGIKARP
+	db 3, GOLDEEN
+	db 3, POLIWAG
+ELSE
 	db 0 ; water encounter rate
+ENDC
