@@ -239,7 +239,11 @@ FightingDojoText6:
 	jr nz, .done
 	ld a, [wcf91]
 	ld b, a
+IF DEF(_ROAM)
+	ld c, 5
+ELSE
 	ld c, 30
+ENDC
 	call GivePokemon
 	jr nc, .done
 
@@ -274,7 +278,11 @@ FightingDojoText7:
 	jr nz, .done
 	ld a, [wcf91]
 	ld b, a
+IF DEF(_ROAM)
+	ld c, 5
+ELSE
 	ld c, 30
+ENDC
 	call GivePokemon
 	jr nc, .done
 	SetEvents EVENT_GOT_HITMONCHAN, EVENT_DEFEATED_FIGHTING_DOJO
