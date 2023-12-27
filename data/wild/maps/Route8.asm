@@ -1,7 +1,18 @@
 Route8Mons:
 	db 15 ; grass encounter rate
+IF DEF(_ROAM)
+	db 3, PIDGEY
+	db 3, MEOWTH
+	db 3, MANKEY
+	db 5, PIDGEY
+	db 5, MEOWTH
+	db 5, MANKEY
+	db 4, SANDSHREW
+	db 4, EKANS
+	db 3, VULPIX
+	db 3, GROWLITHE
+ELIF DEF(_RED)
 	db 18, PIDGEY
-IF DEF(_RED)
 	db 18, MANKEY
 	db 17, EKANS
 	db 16, GROWLITHE
@@ -11,8 +22,8 @@ IF DEF(_RED)
 	db 17, GROWLITHE
 	db 15, GROWLITHE
 	db 18, GROWLITHE
-ENDC
-IF DEF(_BLUE)
+ELIF DEF(_BLUE)
+	db 18, PIDGEY
 	db 18, MEOWTH
 	db 17, SANDSHREW
 	db 16, VULPIX
