@@ -11,7 +11,11 @@ CeladonMansion5Text1:
 
 CeladonMansion5Text2:
 	text_asm
+IF DEF(_ROAM)
+	lb bc, EEVEE, 6
+ELSE
 	lb bc, EEVEE, 25
+ENDC
 	call GivePokemon
 	jr nc, .party_full
 	ld a, HS_CELADON_MANSION_EEVEE_GIFT

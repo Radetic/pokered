@@ -1,7 +1,18 @@
 Route7Mons:
 	db 15 ; grass encounter rate
+IF DEF(_ROAM)
+	db 3, PIDGEY
+	db 3, BELLSPROUT
+	db 3, ODDISH
+	db 5, BELLSPROUT
+	db 5, ODDISH
+	db 5, PIDGEY
+	db 3, VULPIX
+	db 3, GROWLITHE
+	db 3, MEOWTH
+	db 3, MANKEY
+ELIF DEF(_RED)
 	db 19, PIDGEY
-IF DEF(_RED)
 	db 19, ODDISH
 	db 17, MANKEY
 	db 22, ODDISH
@@ -11,8 +22,8 @@ IF DEF(_RED)
 	db 20, GROWLITHE
 	db 19, MANKEY
 	db 20, MANKEY
-ENDC
-IF DEF(_BLUE)
+ELIF DEF(_BLUE)
+	db 19, PIDGEY
 	db 19, BELLSPROUT
 	db 17, MEOWTH
 	db 22, BELLSPROUT
