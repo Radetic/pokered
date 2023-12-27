@@ -1,9 +1,20 @@
 Route10Mons:
 	db 15 ; grass encounter rate
+IF DEF(_ROAM)
+	db 4, VOLTORB
+	db 4, SPEAROW
+	db 3, VOLTORB
+	db 3, SPEAROW
+	db 4, SANDSHREW
+	db 4, EKANS
+	db 5, VOLTORB
+	db 5, SPEAROW
+	db 5, SANDSHREW
+	db 5, EKANS
+ELIF DEF(_RED)
 	db 16, VOLTORB
 	db 16, SPEAROW
 	db 14, VOLTORB
-IF DEF(_RED)
 	db 11, EKANS
 	db 13, SPEAROW
 	db 15, EKANS
@@ -11,8 +22,10 @@ IF DEF(_RED)
 	db 17, SPEAROW
 	db 13, EKANS
 	db 17, EKANS
-ENDC
-IF DEF(_BLUE)
+ELIF DEF(_BLUE)
+	db 16, VOLTORB
+	db 16, SPEAROW
+	db 14, VOLTORB
 	db 11, SANDSHREW
 	db 13, SPEAROW
 	db 15, SANDSHREW
