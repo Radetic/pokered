@@ -1,6 +1,23 @@
 TitleMons:
 ; mons on the title screen are randomly chosen from here
-IF DEF(_RED)
+IF DEF(_ROAM)
+	db MAGIKARP
+	db POLIWAG
+	db GOLDEEN
+	db TENTACOOL
+	db PIDGEY
+	db RATTATA
+	db STARYU
+	db HORSEA
+	db SHELLDER
+	db TANGELA
+	db EKANS
+	db TAUROS
+	db MACHOP
+	db SANDSHREW
+	db DIGLETT
+	db RHYHORN
+ELIF DEF(_RED)
 	db STARTER1
 	db STARTER2
 	db STARTER3
@@ -17,8 +34,7 @@ IF DEF(_RED)
 	db ONIX
 	db PONYTA
 	db MAGIKARP
-ENDC
-IF DEF(_GREEN)
+ELIF(_GREEN)
 	db STARTER3
 	db STARTER1
 	db STARTER2
@@ -35,8 +51,7 @@ IF DEF(_GREEN)
 	db ONIX
 	db PONYTA
 	db MAGIKARP
-ENDC
-IF DEF(_BLUE)
+ELIF(_BLUE)
 	db STARTER2
 	db STARTER1
 	db STARTER3
