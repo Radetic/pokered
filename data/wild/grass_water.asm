@@ -1,5 +1,5 @@
 WildDataPointers:
-	dw NoMons      ; PALLET_TOWN
+	dw PalletMons  ; PALLET_TOWN
 	dw NoMons      ; VIRIDIAN_CITY
 	dw NoMons      ; PEWTER_CITY
 	dw NoMons      ; CERULEAN_CITY
@@ -261,6 +261,7 @@ WildDataPointers:
         ; level, species (ten times)
 
 INCLUDE "data/wild/maps/nothing.asm"
+INCLUDE "data/wild/maps/Pallet.asm"
 INCLUDE "data/wild/maps/Route1.asm"
 INCLUDE "data/wild/maps/Route2.asm"
 INCLUDE "data/wild/maps/Route22.asm"
