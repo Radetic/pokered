@@ -92,7 +92,11 @@ OakSpeech:
 	call PrintText
 	call GBFadeOutToWhite
 	call ClearScreen
+IF DEF(_ROAM)
+	ld a, STARTER2 ; pokemon intro example
+ELSE
 	ld a, NIDORINO ; pokemon intro example
+ENDC
 	ld [wd0b5], a
 	ld [wcf91], a
 	call GetMonHeader
