@@ -13,9 +13,9 @@ IF DEF(_ROAM)
 	db 5, TANGELA
 
 	db 5 ; water encounter rate
-	db 2, MAGIKARP
 	db 3, TENTACOOL
-	db 3, POLIWAG
+	db 3, TENTACOOL
+	db 3, TENTACOOL
 	db 4, TENTACOOL
 	db 5, TENTACOOL
 	db 5, TENTACOOL
