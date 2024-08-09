@@ -117,10 +117,11 @@ DisplayTitleScreen:
 	call SaveScreenTilesToBuffer2
 	call LoadScreenTilesFromBuffer2
 	call EnableLCD
-IF DEF(_RED)
+IF DEF(_ROAM)
+	ld a, STARTER1 ; which Pokemon to show first on the title screen
+ELIF DEF(_RED)
 	ld a, CHARMANDER ; which Pokemon to show first on the title screen
-ENDC
-IF DEF(_BLUE)
+ELIF DEF(_BLUE)
 	ld a, SQUIRTLE ; which Pokemon to show first on the title screen
 ENDC
 
